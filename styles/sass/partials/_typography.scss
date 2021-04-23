@@ -1,4 +1,11 @@
-h1.heading--home {
+// Home
+h1.home--heading {
   font-size: 64px;
   line-height: 74px;
+  font-family: $font-home-heading;
+}
+
+h1.home--heading span {
+  display: block;
+  color: $color-san-marino;
 }

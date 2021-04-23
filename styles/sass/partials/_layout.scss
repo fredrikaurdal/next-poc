@@ -1,4 +1,12 @@
 body {
   font-family: $font-primary;
   color: $color-mine-shaft;
+  margin: 0;
+  padding: 0;
+}
+
+// Home
+.home--grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
 }
