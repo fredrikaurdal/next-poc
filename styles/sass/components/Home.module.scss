@@ -1,6 +1,12 @@
 @import '../partials/base';
 @import '../partials/typography';
 
+.background {
+  background-image: url('https://project-exam-2.s3.eu-north-1.amazonaws.com/home_tile_2ea52d736d.jpg');
+  min-height: 100vh;
+  height: 100%;
+}
+
 .heading {
   font-size: 64px;
   line-height: 74px;
@@ -12,7 +18,17 @@
   color: $color-san-marino;
 }
 
-.home__grid {
+.grid {
   display: grid;
   grid-template-columns: 60% 40%;
+}
+
+.grid__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid img {
+  max-width: 100%;
 }
