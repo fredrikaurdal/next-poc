@@ -1,3 +1,22 @@
+import Link from 'next/link';
+
+import styles from '../styles/sass/components/Navbar.module.scss';
+
 export default function Navbar() {
-  return <div>Test</div>;
+  return (
+    <div className={styles.navbar}>
+      <img src="https://project-exam-2.s3.eu-north-1.amazonaws.com/logo_0fa503e974.svg" />
+      <div className={styles.navbar__links}>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+        <Link href="/">
+          <a>Enquiry</a>
+        </Link>
+        <Link href="/">
+          <a>Contact</a>
+        </Link>
+      </div>
+    </div>
+  );
 }

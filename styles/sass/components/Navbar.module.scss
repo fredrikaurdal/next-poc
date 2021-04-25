@@ -1,0 +1,36 @@
+@import '../partials/_base';
+@import '../partials/_typography';
+
+.navbar {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  padding: 48px 64px 0 64px;
+  box-sizing: border-box;
+}
+
+.navbar__links {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 48px;
+  color: $color-mine-shaft;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.navbar__links a {
+  color: $color-mine-shaft;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration: none;
+}
+
+.navbar__links a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: $color-silver-chalice;
+  text-underline-offset: 2px;
+}
