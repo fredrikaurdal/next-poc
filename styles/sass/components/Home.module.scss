@@ -1,0 +1,18 @@
+@import '../partials/base';
+@import '../partials/typography';
+
+.heading {
+  font-size: 64px;
+  line-height: 74px;
+  font-family: $font-home-heading;
+}
+
+.heading span {
+  display: block;
+  color: $color-san-marino;
+}
+
+.home__grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
