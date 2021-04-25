@@ -8,6 +8,9 @@ $color-raw-sienna: #d17852;
 $color-white: #ffffff;
 $color-mercury: #e4e4e4;
 
+// Shadows
+$shadow-default: 0px 0px 20px rgba(0, 0, 0, 0.01);
+
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap');
