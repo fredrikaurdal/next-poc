@@ -11,6 +11,8 @@
   font-size: 64px;
   line-height: 74px;
   font-family: $font-home-heading;
+  margin: 0;
+  padding-bottom: 7px;
 }
 
 .heading span {
@@ -31,4 +33,10 @@
 
 .grid img {
   max-width: 100%;
+}
+
+.content {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 17px;
 }
