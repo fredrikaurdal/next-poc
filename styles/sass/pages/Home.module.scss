@@ -80,6 +80,11 @@
 
   .content__wrapper {
     justify-items: center;
+    text-align: center;
+  }
+
+  .input::placeholder {
+    text-align: center;
   }
 }
 
@@ -90,5 +95,12 @@
     align-items: center;
     width: 100%;
     margin-top: 110px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .heading {
+    font-size: 48px;
+    line-height: 58px;
   }
 }
