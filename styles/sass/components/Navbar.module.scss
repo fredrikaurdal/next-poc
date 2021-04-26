@@ -34,3 +34,16 @@
   text-decoration-color: $color-silver-chalice;
   text-underline-offset: 2px;
 }
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    gap: 24px;
+  }
+
+  .navbar__links {
+    justify-items: center;
+  }
+}
