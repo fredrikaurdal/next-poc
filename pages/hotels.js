@@ -5,12 +5,17 @@ import HotelCard from '../components/HotelCard';
 import axios from 'axios';
 
 export default function Hotels(props) {
+  const hotels = props.hotels.map((hotel) => (
+    <HotelCard
+      key={hotel._id}
+      name={hotel.Name}
+      image={hotel.Image[0].formats.small.url}
+    />
+  ));
   return (
     <>
       <Navbar />
-      <div className={`${styles.content} ${styles.absolute}`}>
-        <HotelCard name="Fjord Hotel" />
-      </div>
+      <div className={styles.content}>{hotels}</div>
     </>
   );
 }
@@ -21,7 +26,7 @@ export async function getStaticProps() {
   try {
     const response = await axios.get(BASE_URL + 'hotels');
 
-    console.log(response.data);
+    // console.log(response.data);
 
     hotels = response.data;
   } catch (error) {
