@@ -15,7 +15,7 @@ export default function Hotels(props) {
   return (
     <>
       <Navbar />
-      <div className={styles.content}>{hotels}</div>
+      <div className={styles.cards}>{hotels}</div>
     </>
   );
 }

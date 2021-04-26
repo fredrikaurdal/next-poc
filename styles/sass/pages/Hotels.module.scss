@@ -1,8 +1,11 @@
 @import '../partials/_base';
 @import '../partials/_typography';
 
-.content {
+.cards {
   margin: 64px 65px 65px 65px;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 48px;
 }
 
 .card {

@@ -1,6 +1,13 @@
 @import '../partials/_base';
-@import '../partials/_typography';
+// @import '../partials/_typography';
 
 .card {
   height: 192px;
+}
+
+.card__image {
+  height: 192px;
+  width: 192px;
+  border-radius: 5px;
+  box-shadow: $shadow-result-card;
 }
