@@ -39,6 +39,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin: 69px 24px 0 24px;
 }
 
 .content__wrapper {
@@ -79,5 +80,15 @@
 
   .content__wrapper {
     justify-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 110px;
   }
 }
