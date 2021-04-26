@@ -11,11 +11,8 @@ export default function Navbar() {
         </a>
       </Link>
       <div className={styles.navbar__links}>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Link href="/">
-          <a>Enquiry</a>
+        <Link href="/hotels">
+          <a>Hotels</a>
         </Link>
         <Link href="/">
           <a>Contact</a>
