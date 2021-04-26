@@ -1,12 +1,8 @@
 @import '../partials/_base';
 @import '../partials/_typography';
 
-.absolute {
-  position: absolute;
-}
-
 .navbar {
-  // position: absolute;
+  position: absolute;
   display: flex;
   justify-content: space-between;
   width: 100%;

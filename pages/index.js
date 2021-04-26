@@ -7,7 +7,7 @@ export default function Home() {
       <div className={styles.background}>
         <div className={styles.grid}>
           <div className={styles.grid__left}>
-            <Navbar />
+            <Navbar position="absolute" />
             <div className={styles.content}>
               <div className={styles.content__wrapper}>
                 <h1 className={styles.heading}>
