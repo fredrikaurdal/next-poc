@@ -1,8 +1,9 @@
 @import '../partials/_base';
-// @import '../partials/_typography';
 
 .card {
   height: 192px;
+  display: grid;
+  grid-template-columns: 192px auto auto;
 }
 
 .card__image {
