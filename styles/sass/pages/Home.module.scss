@@ -27,8 +27,7 @@
 
 .grid__left {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 }
 
 .grid img {
@@ -36,6 +35,13 @@
 }
 
 .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.content__wrapper {
   display: grid;
   grid-auto-flow: row;
   gap: 17px;
@@ -57,4 +63,11 @@
   font-size: 16px;
   line-height: 19px;
   color: $color-silver-chalice;
+}
+
+@media screen and (max-width: 1300px) {
+  .grid {
+    grid-template-columns: auto;
+    grid-template-rows: 512px auto;
+  }
 }

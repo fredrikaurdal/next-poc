@@ -4,18 +4,23 @@ import Navbar from '../components/Navbar';
 export default function Home() {
   return (
     <>
-      <Navbar />
       <div className={styles.background}>
         <div className={styles.grid}>
           <div className={styles.grid__left}>
+            <Navbar />
             <div className={styles.content}>
-              <h1 className={styles.heading}>
-                Book Your Stay <span>In Bergen</span>
-              </h1>
-              <div className="description">
-                Comfortable rooms in the heart of the city centre
+              <div className={styles.content__wrapper}>
+                <h1 className={styles.heading}>
+                  Book Your Stay <span>In Bergen</span>
+                </h1>
+                <div className="description">
+                  Comfortable rooms in the heart of the city centre
+                </div>
+                <input
+                  className={styles.input}
+                  placeholder="Enter hotel name"
+                />
               </div>
-              <input className={styles.input} placeholder="Enter hotel name" />
             </div>
           </div>
           <img
