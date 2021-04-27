@@ -7,9 +7,12 @@ export default function HotelCard(props) {
     <div className={styles.card}>
       <img className={styles.card__image} src={props.image} />
       <div className={styles.card__center}>
-        <div className={styles.card__rating}>{props.rating}</div>
+        <div className={styles.card__rating}>
+          <img src="https://project-exam-2.s3.eu-north-1.amazonaws.com/star_a832bdb4f1.svg" />
+          <div className="info">{props.rating}</div>
+        </div>
         <h2 className={styles.card__name}>{props.name}</h2>
-        <div className={styles.card__address}>{props.address}</div>
+        <div className="description">{props.address}</div>
       </div>
       <div className={styles.card__right}>
         <div className={styles.card__price}>{props.price}</div>
