@@ -4,9 +4,10 @@
 .button {
   border-radius: 5px;
   text-decoration: none;
+  text-align: center;
 }
 
-.button__hotel_listing {
+.button--hotel-listing {
   background: $color-botticelli;
   font-weight: 600;
   color: $color-san-marino;
