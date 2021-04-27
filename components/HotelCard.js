@@ -15,7 +15,7 @@ export default function HotelCard(props) {
         <div className="description">{props.address}</div>
       </div>
       <div className={styles.card__right}>
-        <div className={styles.card__price}>{props.price}</div>
+        <div className="price">€{props.price}</div>
         <div>Button</div>
       </div>
     </div>

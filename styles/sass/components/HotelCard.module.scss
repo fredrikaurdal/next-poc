@@ -4,8 +4,8 @@
 .card {
   height: 192px;
   display: inline-grid;
-  grid-template-columns: min-content fit-content(100%) fit-content(100%);
-  width: fit-content(100%);
+  grid-template-columns: min-content auto auto;
+  width: 100%;
 }
 
 .card__image {

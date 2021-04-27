@@ -3,7 +3,9 @@
 
 .cards {
   margin: 64px 65px 65px 65px;
-  display: grid;
+  display: inline-grid;
   grid-auto-flow: row;
   gap: 48px;
+  width: auto;
+  // grid-template-rows: fit-content(100%);
 }
