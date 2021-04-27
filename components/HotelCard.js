@@ -15,7 +15,10 @@ export default function HotelCard(props) {
         <div className="description">{props.address}</div>
       </div>
       <div className={styles.card__right}>
-        <div className="price">€{props.price}</div>
+        <div className={styles.price_wrapper}>
+          <div className="price">€{props.price}</div>
+          <div className={`info ${styles.price_wrapper__info}`}>Per night</div>
+        </div>
         <div>Button</div>
       </div>
     </div>

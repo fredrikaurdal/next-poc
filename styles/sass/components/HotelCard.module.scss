@@ -36,3 +36,12 @@
   flex-direction: column;
   text-align: end;
 }
+
+.price_wrapper {
+  display: inline-grid;
+  gap: 4px;
+}
+
+.price_wrapper__info {
+  color: $color-dove-gray;
+}
