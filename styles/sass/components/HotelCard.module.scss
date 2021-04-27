@@ -19,9 +19,7 @@
   display: inline-grid;
   grid-template-rows: fit-content(100%) fit-content(100%) fit-content(100%);
   gap: 16px;
-  padding-top: 16px;
-  padding-left: 32px;
-  padding-right: 48px;
+  padding: 16px 48px 0 32px;
 }
 
 .card__rating {
@@ -52,7 +50,7 @@
     display: inline-grid;
     // grid-template-columns: min-content auto fit-content(100%);
     grid-template-columns: 192px;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 192px auto auto;
     gap: 16px;
     // align-items: center;
     // width: 100%;
@@ -62,6 +60,8 @@
     padding-top: 0;
     text-align: center;
     justify-items: center;
+    // grid-template-rows: 1fr 1fr 1fr;
+    padding: 0;
   }
 
   .price_wrapper {

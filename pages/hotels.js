@@ -19,7 +19,9 @@ export default function Hotels(props) {
   return (
     <>
       <Navbar />
-      <div className={styles.cards}>{hotels}</div>
+      <div className={styles.cards}>
+        <div className={styles.cards__wrapper}>{hotels}</div>
+      </div>
     </>
   );
 }

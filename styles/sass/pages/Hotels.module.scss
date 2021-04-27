@@ -2,9 +2,33 @@
 @import '../partials/_typography';
 
 .cards {
+  display: flex;
+  justify-content: center;
+}
+
+.cards__wrapper {
   margin: 64px 65px 65px 65px;
   display: inline-grid;
   grid-auto-flow: row;
   gap: 48px;
   width: auto;
+  grid-template-columns: auto auto;
+}
+
+@media screen and (max-width: 1397px) {
+  .cards__wrapper {
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width: 758px) {
+  .cards__wrapper {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 563px) {
+  .cards__wrapper {
+    grid-template-columns: auto;
+  }
 }
