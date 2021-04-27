@@ -1,0 +1,13 @@
+@import '../partials/_base';
+@import '../partials/_typography';
+
+.button {
+  border-radius: 5px;
+}
+
+.button__hotel_listing {
+  background: $color-botticelli;
+  font-weight: 600;
+  color: $color-san-marino;
+  padding: 16px 32px;
+}

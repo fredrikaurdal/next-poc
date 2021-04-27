@@ -4,7 +4,7 @@
 .card {
   height: 192px;
   display: inline-grid;
-  grid-template-columns: min-content auto auto;
+  grid-template-columns: min-content auto fit-content(100%);
   width: 100%;
 }
 

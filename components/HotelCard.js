@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import Button from '../components/Button';
 import styles from '../styles/sass/components/HotelCard.module.scss';
 
 export default function HotelCard(props) {
@@ -19,7 +19,7 @@ export default function HotelCard(props) {
           <div className="price">€{props.price}</div>
           <div className={`info ${styles.price_wrapper__info}`}>Per night</div>
         </div>
-        <div>Button</div>
+        <Button text="More" style="button__hotel_listing" />
       </div>
     </div>
   );
