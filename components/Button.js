@@ -4,8 +4,8 @@ import styles from '../styles/sass/components/Button.module.scss';
 
 export default function Button(props) {
   return (
-    <div className={`${styles.button} ${styles[props.style]}`}>
-      {props.text}
-    </div>
+    <Link href={props.id}>
+      <a className={`${styles.button} ${styles[props.style]}`}>{props.text}</a>
+    </Link>
   );
 }
