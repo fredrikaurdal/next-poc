@@ -2,8 +2,9 @@
 
 .card {
   height: 192px;
-  display: grid;
-  grid-template-columns: 192px auto auto;
+  display: inline-grid;
+  grid-template-columns: min-content fit-content(100%) fit-content(100%);
+  width: fit-content(100%);
 }
 
 .card__image {
@@ -11,4 +12,20 @@
   width: 192px;
   border-radius: 5px;
   box-shadow: $shadow-result-card;
+}
+
+.card__center {
+  display: inline-grid;
+  grid-template-rows: fit-content(100%) fit-content(100%) fit-content(100%);
+  gap: 16px;
+  padding-top: 16px;
+  padding-left: 32px;
+  padding-right: 48px;
+}
+
+.card__right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: end;
 }

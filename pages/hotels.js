@@ -10,6 +10,9 @@ export default function Hotels(props) {
       key={hotel._id}
       name={hotel.Name}
       image={hotel.Image[0].formats.small.url}
+      address={hotel.Address}
+      rating={hotel.Rating}
+      price={hotel.Price}
     />
   ));
   return (
