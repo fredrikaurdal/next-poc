@@ -39,6 +39,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  width: 100%;
 }
 
 @media screen and (max-width: 1300px) {
@@ -50,7 +51,7 @@
   }
 
   .address {
-    margin-left: 0;
+    margin: 0 24px 0 24px;
     text-align: center;
   }
 
