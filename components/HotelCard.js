@@ -19,7 +19,11 @@ export default function HotelCard(props) {
           <div className="price">€{props.price}</div>
           <div className={`info ${styles.price_wrapper__info}`}>Per night</div>
         </div>
-        <Button text="More" style="button--hotel-listing" id={props.id} />
+        <Button
+          text="More"
+          style="button--hotel-listing"
+          link={`hotel/${props.id}`}
+        />
       </div>
     </div>
   );

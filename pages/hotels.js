@@ -7,8 +7,8 @@ import axios from 'axios';
 export default function Hotels(props) {
   const hotels = props.hotels.map((hotel) => (
     <HotelCard
-      key={hotel._id}
-      id={hotel._id}
+      key={hotel.id}
+      id={hotel.id}
       name={hotel.Name}
       image={hotel.Image[0].formats.small.url}
       address={hotel.Address}
