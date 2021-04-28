@@ -1,0 +1,36 @@
+@import '../partials/_base';
+@import '../partials/_typography';
+
+.content {
+  margin: 64px 0 64px 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.content__left {
+  display: grid;
+  gap: 24px;
+}
+
+.address {
+  margin-left: 24px;
+}
+
+.content__right {
+  display: inline-grid;
+  grid-template-rows: auto auto;
+  justify-self: center;
+  align-self: center;
+  gap: 74px;
+  max-width: 512px;
+}
+
+.info_start {
+  display: grid;
+  gap: 18px;
+}
+
+.info_end {
+  display: flex;
+  justify-content: space-between;
+}

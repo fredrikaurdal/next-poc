@@ -1,11 +1,34 @@
-import styles from '../../styles/sass/pages/Hotels.module.scss';
+import styles from '../../styles/sass/pages/[slug].module.scss';
 import { BASE_URL } from '../../constants/api';
 import Navbar from '../../components/Navbar';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import Rating from '../../components/Rating';
 
 export default function Hotel({ hotel }) {
-  return <>{hotel.Name}</>;
+  return (
+    <>
+      <Navbar />
+      <div className={styles.content}>
+        <div className={styles.content__left}>
+          <img src={hotel.Image[0].url} />
+          <div className={`${styles.address} description`}>{hotel.Address}</div>
+        </div>
+        <div className={styles.content__right}>
+          <div className={styles.info_start}>
+            <Rating rating={hotel.Rating} />
+            <div>{hotel.Name}</div>
+            <div>{hotel.Description}</div>
+          </div>
+
+          <div className={styles.info_end}>
+            <div>{hotel.Price}</div>
+            <div>Book Now</div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export async function getStaticPaths() {
