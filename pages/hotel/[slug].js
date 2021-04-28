@@ -17,8 +17,8 @@ export default function Hotel({ hotel }) {
         <div className={styles.content__right}>
           <div className={styles.info_start}>
             <Rating rating={hotel.Rating} />
-            <div>{hotel.Name}</div>
-            <div>{hotel.Description}</div>
+            <h1>{hotel.Name}</h1>
+            <div className="paragraph">{hotel.Description}</div>
           </div>
 
           <div className={styles.info_end}>
