@@ -12,7 +12,7 @@ export default function Hotel({ hotel }) {
       <Navbar />
       <div className={styles.content}>
         <div className={styles.content__left}>
-          <img src={hotel.Image[0].url} />
+          <img src={hotel.Image[0].url} className={styles.image} />
           <div className={`${styles.address} description`}>{hotel.Address}</div>
         </div>
         <div className={styles.content__right}>
