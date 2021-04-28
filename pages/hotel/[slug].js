@@ -2,8 +2,9 @@ import styles from '../../styles/sass/pages/[slug].module.scss';
 import { BASE_URL } from '../../constants/api';
 import Navbar from '../../components/Navbar';
 import axios from 'axios';
-import { useRouter } from 'next/router';
 import Rating from '../../components/Rating';
+import Button from '../../components/Button';
+import Price from '../../components/Price';
 
 export default function Hotel({ hotel }) {
   return (
@@ -22,8 +23,8 @@ export default function Hotel({ hotel }) {
           </div>
 
           <div className={styles.info_end}>
-            <div>{hotel.Price}</div>
-            <div>Book Now</div>
+            <Price price={hotel.Price} />
+            <Button text="Book Now" style="button__hotel_listing" link={`#`} />
           </div>
         </div>
       </div>

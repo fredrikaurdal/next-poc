@@ -22,12 +22,6 @@
   padding: 16px 48px 0 32px;
 }
 
-// .card__rating {
-//   display: grid;
-//   grid-template-columns: fit-content(100%) fit-content(100%);
-//   gap: 8px;
-// }
-
 .card__right {
   display: flex;
   justify-content: space-between;
@@ -35,37 +29,19 @@
   text-align: end;
 }
 
-.price_wrapper {
-  display: inline-grid;
-  gap: 4px;
-}
-
-.price_wrapper__info {
-  color: $color-dove-gray;
-}
-
 @media screen and (max-width: 759px) {
   .card {
     height: auto;
     display: inline-grid;
-    // grid-template-columns: min-content auto fit-content(100%);
     grid-template-columns: 192px;
     grid-template-rows: 192px auto auto;
     gap: 16px;
-    // align-items: center;
-    // width: 100%;
   }
 
   .card__center {
     padding-top: 0;
     text-align: center;
     justify-items: center;
-    // grid-template-rows: 1fr 1fr 1fr;
     padding: 0;
-  }
-
-  .price_wrapper {
-    text-align: center;
-    margin-bottom: 16px;
   }
 }

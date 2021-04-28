@@ -1,0 +1,18 @@
+@import '../partials/_base';
+@import '../partials/_typography';
+
+.price_wrapper {
+  display: inline-grid;
+  gap: 4px;
+}
+
+.price_wrapper__info {
+  color: $color-dove-gray;
+}
+
+@media screen and (max-width: 759px) {
+  .price_wrapper {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+}
