@@ -6,10 +6,11 @@ export default function Button(props) {
 
   if (!props.link) {
     button = (
-      <div onClick={props.onClick}>
-        <a className={`${styles.button} ${styles[props.style]}`}>
-          {props.text}
-        </a>
+      <div
+        onClick={props.onClick}
+        className={`${styles.button} ${styles[props.style]}`}
+      >
+        {props.text}
       </div>
     );
   } else {

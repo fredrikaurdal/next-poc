@@ -3,17 +3,23 @@
 
 .modal {
   position: fixed;
+  display: grid;
+  justify-items: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: $color-white;
-  padding: 64px 192px;
+  padding: 48px;
   border-radius: 5px;
   z-index: 999;
 }
 
 .modal__content {
-  position: relative;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  justify-items: center;
+  gap: 18px;
+  margin-bottom: 6px;
 }
 
 .close_button {
