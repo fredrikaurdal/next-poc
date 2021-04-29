@@ -1,6 +1,6 @@
 import styles from '../styles/sass/components/Price.module.scss';
 
-export default function Button(props) {
+export default function Price(props) {
   return (
     <div className={styles.price_wrapper}>
       <div className="price">€{props.price}</div>

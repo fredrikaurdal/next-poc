@@ -5,11 +5,21 @@ import axios from 'axios';
 import Rating from '../../components/Rating';
 import Button from '../../components/Button';
 import Price from '../../components/Price';
+import Modal from '../../components/Modal';
+import { useState } from 'react';
 
 export default function Hotel({ hotel }) {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  // setModalOpen(true);
+
+  console.log(modalOpen);
   return (
     <>
       <Navbar />
+      <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
+        Modal content
+      </Modal>
       <div className={styles.content}>
         <div className={styles.content__left}>
           <img src={hotel.Image[0].url} className={styles.image} />
@@ -24,7 +34,12 @@ export default function Hotel({ hotel }) {
 
           <div className={styles.info_end}>
             <Price price={hotel.Price} />
-            <Button text="Book Now" style="button__hotel_listing" link={`#`} />
+            <Button
+              text="Book Now"
+              style="button__hotel_listing"
+              onClick={() => setModalOpen(true)}
+              // onClick={() => console.log(modalOpen)}
+            />
           </div>
         </div>
       </div>

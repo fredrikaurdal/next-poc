@@ -1,7 +1,7 @@
 import styles from '../styles/sass/components/Rating.module.scss';
 import { STAR } from '../constants/assets';
 
-export default function Button(props) {
+export default function Rating(props) {
   return (
     <div className={styles.card__rating}>
       <img src={STAR} />
