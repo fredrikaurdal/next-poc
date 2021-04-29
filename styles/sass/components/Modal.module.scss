@@ -16,6 +16,15 @@
   position: relative;
 }
 
+.close_button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 24px;
+  margin-right: 24px;
+  cursor: pointer;
+}
+
 .overlay {
   position: fixed;
   top: 0;

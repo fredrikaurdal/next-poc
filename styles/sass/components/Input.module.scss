@@ -1,0 +1,18 @@
+@import '../partials/_base';
+@import '../partials/_typography';
+
+.input {
+  background-color: $color-white;
+  border-radius: 5px;
+  box-shadow: $shadow-input;
+  padding: 16px;
+  border: 1px solid $color-mercury;
+}
+
+.input::placeholder {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 300;
+  font-style: italic;
+  color: $color-silver-chalice;
+}

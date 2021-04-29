@@ -17,9 +17,7 @@ export default function Hotel({ hotel }) {
   return (
     <>
       <Navbar />
-      <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
-        Modal content
-      </Modal>
+      <Modal open={modalOpen} onClose={() => setModalOpen(false)} />
       <div className={styles.content}>
         <div className={styles.content__left}>
           <img src={hotel.Image[0].url} className={styles.image} />
