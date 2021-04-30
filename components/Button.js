@@ -4,11 +4,20 @@ import styles from '../styles/sass/components/Button.module.scss';
 export default function Button(props) {
   let button;
 
-  if (!props.link) {
+  if (props.input === true) {
+    button = (
+      <input
+        className={`${styles.button} ${styles[props.style]}`}
+        type="submit"
+        value="Enquire"
+      />
+    );
+  } else if (!props.link) {
     button = (
       <div
         onClick={props.onClick}
         className={`${styles.button} ${styles[props.style]}`}
+        type={props.type}
       >
         {props.text}
       </div>
@@ -22,5 +31,5 @@ export default function Button(props) {
       </Link>
     );
   }
-  return <div>{button}</div>;
+  return <>{button}</>;
 }

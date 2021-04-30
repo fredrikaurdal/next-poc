@@ -8,16 +8,20 @@ import Price from '../../components/Price';
 import Modal from '../../components/Modal';
 import { useState } from 'react';
 
+// >>> Include hotel ID in enquiry POST request
+
 export default function Hotel({ hotel }) {
   const [modalOpen, setModalOpen] = useState(false);
-
-  // setModalOpen(true);
-
-  console.log(modalOpen);
   return (
     <>
       <Navbar />
-      <Modal open={modalOpen} onClose={() => setModalOpen(false)} />
+      <Modal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        name={true}
+        email={true}
+        number={true}
+      />
       <div className={styles.content}>
         <div className={styles.content__left}>
           <img src={hotel.Image[0].url} className={styles.image} />
@@ -36,7 +40,6 @@ export default function Hotel({ hotel }) {
               text="Book Now"
               style="button__hotel_listing"
               onClick={() => setModalOpen(true)}
-              // onClick={() => console.log(modalOpen)}
             />
           </div>
         </div>

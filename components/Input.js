@@ -6,6 +6,7 @@ export default function Input(props) {
       type={props.type}
       className={styles.input}
       placeholder={props.placeholder}
+      name={props.name}
     />
   );
 }
