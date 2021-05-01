@@ -1,0 +1,12 @@
+@import '../partials/_base';
+@import '../partials/_typography';
+
+.status {
+  color: $color-mountain-meadow;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.status__error {
+  color: $color-flamingo;
+}

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from '../styles/sass/components/Modal.module.scss';
 import Input from '../components/Input';
 import Button from '../components/Button';
+import Validation from '../components/Validation';
 import { CLOSE } from '../constants/assets';
 import { BASE_URL } from '../constants/api';
 
@@ -9,6 +10,8 @@ export default function Modal({ open, onClose, name, email, number }) {
   if (!open) return null;
 
   const [status, setStatus] = useState(null);
+
+  const [validation, setValidation] = useState({});
 
   const submitEnquiry = async (event) => {
     event.preventDefault();
@@ -25,15 +28,24 @@ export default function Modal({ open, onClose, name, email, number }) {
       method: 'POST',
     });
 
-    event.target.reset();
+    // event.target.reset();
 
-    const result = await res;
+    const response = await res;
+    const json = await res.json();
 
-    // result = await res.json();
+    setStatus(response.status);
 
-    setStatus(result.status);
+    if (json.data && json.data.errors) {
+      setValidation(json.data.errors);
+      console.log(validation);
+    }
 
-    console.log(result.status);
+    if (response.status === 200) {
+      event.target.reset();
+      setValidation({});
+    }
+
+    console.log(response.status);
   };
 
   return (
@@ -45,17 +57,18 @@ export default function Modal({ open, onClose, name, email, number }) {
           {name === true ? (
             <Input
               placeholder={'Name *'}
-              required={true}
+              // required={true}
               name="Name"
-              // errors={result}
+              error={validation['Name']}
             />
           ) : null}
           {email === true ? (
             <Input
               placeholder={'Email *'}
-              required={true}
+              // required={true}
               name="Email"
               type="email"
+              error={validation['Email']}
             />
           ) : null}
           {number === true ? (
@@ -65,11 +78,11 @@ export default function Modal({ open, onClose, name, email, number }) {
               type="number"
             />
           ) : null}
-
           <Button text="Enquire" style="button__input-submit" input={true} />
-          <div className={styles.status}>
+          {/* <div className={styles.status}>
             {status === 200 && 'Submitted successfully'}
-          </div>
+          </div> */}
+          <Validation status={status} />
         </form>
       </div>
     </>

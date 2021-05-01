@@ -1,4 +1,5 @@
 import styles from '../styles/sass/components/Input.module.scss';
+import Validation from '../components/Validation';
 
 export default function Input(props) {
   return (
@@ -12,7 +13,7 @@ export default function Input(props) {
         type={props.type}
         // ref={props.registerRef}
       />
-      {/* {props.errors.name && <span>{props.errors.name.message}</span>} */}
+      {props.error && <Validation error={props.error} />}
     </>
   );
 }
