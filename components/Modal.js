@@ -28,8 +28,6 @@ export default function Modal({ open, onClose, name, email, number }) {
       method: 'POST',
     });
 
-    // event.target.reset();
-
     const response = await res;
     const json = await res.json();
 
@@ -57,7 +55,6 @@ export default function Modal({ open, onClose, name, email, number }) {
           {name === true ? (
             <Input
               placeholder={'Name *'}
-              // required={true}
               name="Name"
               error={validation['Name']}
             />
@@ -65,7 +62,6 @@ export default function Modal({ open, onClose, name, email, number }) {
           {email === true ? (
             <Input
               placeholder={'Email *'}
-              // required={true}
               name="Email"
               type="email"
               error={validation['Email']}
@@ -79,9 +75,6 @@ export default function Modal({ open, onClose, name, email, number }) {
             />
           ) : null}
           <Button text="Enquire" style="button__input-submit" input={true} />
-          {/* <div className={styles.status}>
-            {status === 200 && 'Submitted successfully'}
-          </div> */}
           <Validation status={status} />
         </form>
       </div>
