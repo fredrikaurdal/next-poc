@@ -1,6 +1,6 @@
 import Link from 'next/link';
-
 import styles from '../styles/sass/components/Navbar.module.scss';
+import { BRAND } from '../constants/assets';
 
 export default function Navbar(props) {
   return (
@@ -11,7 +11,7 @@ export default function Navbar(props) {
     >
       <Link href="/">
         <a>
-          <img src="https://project-exam-2.s3.eu-north-1.amazonaws.com/logo_0fa503e974.svg" />
+          <img src={BRAND} />
         </a>
       </Link>
       <div className={styles.navbar__links}>

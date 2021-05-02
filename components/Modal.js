@@ -74,7 +74,11 @@ export default function Modal({ open, onClose, name, email, number }) {
               type="number"
             />
           ) : null}
-          <Button text="Enquire" style="button__input-submit" input={true} />
+          <Button
+            value="Enquire"
+            style={['button__input_submit']}
+            input={true}
+          />
           <Validation status={status} />
         </form>
       </div>

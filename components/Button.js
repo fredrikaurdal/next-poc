@@ -7,9 +7,11 @@ export default function Button(props) {
   if (props.input === true) {
     button = (
       <input
-        className={`${styles.button} ${styles[props.style]}`}
+        className={`${styles.button} ${styles[props.style[0]]} ${
+          styles[props.style[1]]
+        }`}
         type="submit"
-        value="Enquire"
+        value={props.value}
       />
     );
   } else if (!props.link) {

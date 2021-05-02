@@ -6,21 +6,27 @@
   text-decoration: none;
   text-align: center;
   cursor: pointer;
+
+  font-weight: 600;
 }
 
 .button__hotel_listing {
   background: $color-botticelli;
-  font-weight: 600;
   color: $color-san-marino;
   padding: 16px 32px;
 }
 
-.button__input-submit {
+.button__input_submit {
   background: $color-mine-shaft;
-  font-weight: 600;
   color: $color-white;
   padding: 14px 24px;
   margin-top: 6px;
   font-size: 16px;
+  line-height: 19px;
   font-family: $font-primary;
+  border: none;
+}
+
+.button__input_submit.button__input_submit__login {
+  background: $color-san-marino;
 }
