@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import Validation from '../components/Validation';
 import { BRAND } from '../constants/assets';
 import { BASE_URL } from '../constants/api';
+import { saveToStorage } from '../utils/storage';
 
 export default function Login() {
   const [status, setStatus] = useState(null);
@@ -32,6 +33,10 @@ export default function Login() {
 
     setValidation(null);
 
+    if (response.status === 400) {
+      setStatus('Wrong username or password');
+    }
+
     console.log(json);
 
     if (
@@ -48,10 +53,16 @@ export default function Login() {
       setValidation('Please provide your password');
     }
 
-    // if (response.status === 200) {
-    //   event.target.reset();
-    //   setValidation({});
-    // }
+    if (
+      !json.user &&
+      json.data[0].messages[0].id === 'Auth.form.error.invalid'
+    ) {
+      setValidation('Wrong username or password');
+    }
+
+    if (json.jwt) {
+      saveToStorage('token', json.jwt);
+    }
   };
 
   return (
@@ -75,7 +86,10 @@ export default function Login() {
           style={['button__input_submit', 'button__input_submit__login']}
           input={true}
         />
-        <Validation status={status} />
+        <Validation
+          status={status}
+          error={validation === 'Wrong username or password' && validation}
+        />
       </form>
     </div>
   );

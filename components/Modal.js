@@ -35,7 +35,6 @@ export default function Modal({ open, onClose, name, email, number }) {
 
     if (json.data && json.data.errors) {
       setValidation(json.data.errors);
-      // console.log(validation);
     }
 
     if (response.status === 200) {
