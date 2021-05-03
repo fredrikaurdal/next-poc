@@ -6,7 +6,7 @@ import Validation from '../components/Validation';
 import { CLOSE } from '../constants/assets';
 import { BASE_URL } from '../constants/api';
 
-export default function Modal({ open, onClose, name, email, number }) {
+export default function Modal({ open, onClose, name, email, number, id }) {
   if (!open) return null;
 
   const [status, setStatus] = useState(null);
@@ -21,6 +21,7 @@ export default function Modal({ open, onClose, name, email, number }) {
         Name: event.target.Name.value,
         Email: event.target.Email.value,
         Phone_number: event.target.Phone_number.value,
+        Hotel_id: id,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -35,14 +36,13 @@ export default function Modal({ open, onClose, name, email, number }) {
 
     if (json.data && json.data.errors) {
       setValidation(json.data.errors);
+      console.log(json.data.errors);
     }
 
     if (response.status === 200) {
       event.target.reset();
       setValidation({});
     }
-
-    console.log(json.data.errors);
   };
 
   return (
@@ -78,7 +78,7 @@ export default function Modal({ open, onClose, name, email, number }) {
             style={['button__input_submit']}
             input={true}
           />
-          <Validation status={status} />
+          {<Validation status={status} />}
         </form>
       </div>
     </>

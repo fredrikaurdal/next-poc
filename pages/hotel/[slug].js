@@ -12,6 +12,8 @@ import { useState } from 'react';
 
 export default function Hotel({ hotel }) {
   const [modalOpen, setModalOpen] = useState(false);
+
+  console.log(hotel);
   return (
     <>
       <Navbar />
@@ -21,6 +23,7 @@ export default function Hotel({ hotel }) {
         name={true}
         email={true}
         number={true}
+        id={hotel.id}
       />
       <div className={styles.content}>
         <div className={styles.content__left}>

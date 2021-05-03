@@ -30,17 +30,17 @@ export default function Hotels(props) {
     const json = await res.json();
 
     setStatus(response.status);
+    console.log(response.status);
 
     if (json.data && json.data.errors) {
       setValidation(json.data.errors);
+      console.log(json.data.errors);
     }
 
     if (response.status === 200) {
       event.target.reset();
       setValidation({});
     }
-
-    console.log(json.data.errors);
   };
 
   return (
