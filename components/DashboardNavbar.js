@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import styles from '../styles/sass/components/Navbar.module.scss';
-import { BRAND } from '../constants/assets';
+import styles from '../styles/sass/components/DashboardNavbar.module.scss';
+import { BRAND_LETTER } from '../constants/assets';
 import { getFromStorage, removeFromStorage } from '../utils/storage';
 
-export default function Navbar(props) {
+export default function NavbarDashboard(props) {
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -24,33 +24,32 @@ export default function Navbar(props) {
   }
 
   return (
-    <div
-      className={`${styles.navbar} ${
-        props.position === 'absolute' ? styles.absolute : ''
-      }`}
-    >
+    <div className={styles.navbar}>
       <Link href="/">
         <a>
-          <img src={BRAND} />
+          <img src={BRAND_LETTER} />
         </a>
       </Link>
       <div className={styles.navbar__links}>
-        <Link href="/hotels">
-          <a>Hotels</a>
+        <Link href="/messages">
+          <a>Messages</a>
         </Link>
-        <Link href="/contact">
-          <a>Contact</a>
+        <Link href="/enquiries">
+          <a>Enquiries</a>
         </Link>
-        {!authenticated ? (
-          <Link href="/login">
-            <a>Login</a>
-          </Link>
-        ) : (
-          <div onClick={logout}>
-            <a>Logout</a>
-          </div>
-        )}
+        <Link href="/add-establishment">
+          <a>Add Establishment</a>
+        </Link>
       </div>
+      {!authenticated ? (
+        <Link href="/login">
+          <a>Login</a>
+        </Link>
+      ) : (
+        <div className={styles.logout} onClick={logout}>
+          <a>Logout</a>
+        </div>
+      )}
     </div>
   );
 }

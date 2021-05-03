@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import styles from '../styles/sass/pages/Login.module.scss';
 import Input from '../components/Input';
 import Button from '../components/Button';
@@ -80,7 +81,11 @@ export default function Login() {
 
   return (
     <div className={styles.login_wrapper}>
-      <img src={BRAND} className={styles.brand} />
+      <Link href="/">
+        <a>
+          <img src={BRAND} className={styles.brand} />
+        </a>
+      </Link>
       <form onSubmit={submitLogin} className={styles.form}>
         <Input
           placeholder={'Username'}
