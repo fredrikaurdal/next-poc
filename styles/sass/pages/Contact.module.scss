@@ -1,0 +1,19 @@
+@import '../partials/_base';
+@import '../partials/_typography';
+
+.form_wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form {
+  margin-top: 128px;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
+  gap: 18px;
+  width: 192px;
+}
