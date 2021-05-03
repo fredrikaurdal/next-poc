@@ -21,10 +21,16 @@
   display: grid;
   grid-auto-flow: column;
   gap: 48px;
+}
+
+.navbar__links a {
   color: $color-mine-shaft;
   font-weight: 300;
   font-size: 14px;
   line-height: 17px;
+  text-decoration: none;
+  border-bottom: 1px solid $color-silver-chalice;
+  padding-bottom: 4px;
 }
 
 // .navbar__links a {

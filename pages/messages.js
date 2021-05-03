@@ -1,4 +1,4 @@
-import styles from '../styles/sass/pages/Dashboard.module.scss';
+import styles from '../styles/sass/pages/Messages.module.scss';
 import { BASE_URL } from '../constants/api';
 import DashboardNavbar from '../components/DashboardNavbar';
 import axios from 'axios';

@@ -75,7 +75,7 @@ export default function Login() {
     const jwt = getFromStorage('token');
 
     if (jwt.length > 0) {
-      router.push('/dashboard');
+      router.push('/messages');
     }
   });
 
