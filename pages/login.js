@@ -1,15 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import styles from '../styles/sass/pages/Login.module.scss';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import Validation from '../components/Validation';
 import { BRAND } from '../constants/assets';
 import { BASE_URL } from '../constants/api';
-import { saveToStorage } from '../utils/storage';
+import { saveToStorage, getFromStorage } from '../utils/storage';
 
 export default function Login() {
+  // Request with all fields
   const [status, setStatus] = useState(null);
 
+  // Individual form fields
   const [validation, setValidation] = useState();
 
   const submitLogin = async (event) => {
@@ -64,6 +67,16 @@ export default function Login() {
       saveToStorage('token', json.jwt);
     }
   };
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const jwt = getFromStorage('token');
+
+    if (jwt.length > 0) {
+      router.push('/dashboard');
+    }
+  });
 
   return (
     <div className={styles.login_wrapper}>

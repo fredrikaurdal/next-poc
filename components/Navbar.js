@@ -21,6 +21,9 @@ export default function Navbar(props) {
         <Link href="/">
           <a>Contact</a>
         </Link>
+        <Link href="/login">
+          <a>Login</a>
+        </Link>
       </div>
     </div>
   );
