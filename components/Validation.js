@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styles from '../styles/sass/components/Validation.module.scss';
 
 export default function Validation(props) {
