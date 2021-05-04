@@ -1,5 +1,6 @@
 import styles from '../styles/sass/pages/Home.module.scss';
 import Navbar from '../components/Navbar';
+import { HOME_IMAGE_RIGHT } from '../constants/assets';
 
 export default function Home() {
   return (
@@ -23,10 +24,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <img
-            src="https://project-exam-2.s3.eu-north-1.amazonaws.com/sharon_christina_rorvik_fwcnv0_W_Rs_TY_unsplash_cropped_compressed_5480db2dfd.jpg"
-            alt="Home"
-          />
+          <img src={HOME_IMAGE_RIGHT} alt="Home" />
         </div>
       </div>
     </>

@@ -9,3 +9,6 @@ export const STAR =
 
 export const CLOSE =
   'https://project-exam-2.s3.eu-north-1.amazonaws.com/close_9c22b891c6.svg';
+
+export const HOME_IMAGE_RIGHT =
+  'https://project-exam-2.s3.eu-north-1.amazonaws.com/sharon_christina_rorvik_fwcnv0_W_Rs_TY_unsplash_cropped_compressed_5480db2dfd.jpg';
