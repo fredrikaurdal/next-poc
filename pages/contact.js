@@ -16,6 +16,7 @@ export default function Hotels(props) {
 
     const res = await fetch(BASE_URL + 'messages', {
       body: JSON.stringify({
+        Subject: event.target.Subject.value,
         Name: event.target.Name.value,
         Email: event.target.Email.value,
         Message: event.target.Message.value,
@@ -48,6 +49,11 @@ export default function Hotels(props) {
       <Navbar />
       <div className={styles.form_wrapper}>
         <form onSubmit={submitEnquiry} className={styles.form}>
+          <Input
+            placeholder={'Subject *'}
+            name="Subject"
+            error={validation['Subject']}
+          />
           <Input
             placeholder={'Name *'}
             name="Name"

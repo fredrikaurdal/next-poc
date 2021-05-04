@@ -32,8 +32,6 @@ export async function getStaticProps() {
   try {
     const response = await axios.get(BASE_URL + 'hotels');
 
-    // console.log(response.data);
-
     hotels = response.data;
   } catch (error) {
     console.log(error);
