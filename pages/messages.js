@@ -9,46 +9,56 @@ import axios from 'axios';
 import Modal from '../components/Modal';
 import { getFromStorage } from '../utils/storage';
 
-export default function Dashboard() {
+export default function Messages({ messages }) {
+  // console.log(messages);
+
   // const [param, setParam] = useState();
+  const [token, setToken] = useState();
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState();
 
   // Check if JWT token exists
   useEffect(() => {
     const jwt = getFromStorage('token');
+
+    setToken(jwt);
 
     if (jwt.length < 1) {
       router.push('/login');
     }
   });
 
-  // const router = useRouter();
-  // console.log(router.query);
-
-  // const fetchMessages = async => {
-
-  //   const res = await fetch(BASE_URL + 'messages', {
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //     method: 'GET',
-  //   });
-
-  //   const response = await res;
-  //   const json = await res.json();
-
-  //   console.log(json);
-  // };
+  const content = messages.map((message) => (
+    <>
+      <Modal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        message={modalContent}
+      />
+      <Layout>
+        <Card
+          key={message.id}
+          param={42}
+          title={message.Subject}
+          description={message.Message}
+          date={message.createdAt}
+          onClick={() => {
+            setModalOpen(true);
+            setModalContent(message);
+          }}
+        />
+      </Layout>
+    </>
+  ));
 
   return (
     <div>
       <Navbar />
-      <Modal
+      {content}
+      {/* <Modal
         open={modalOpen}
         onClose={() => setModalOpen(false)}
-        name={true}
-        email={true}
-        number={true}
+        messages={messages}
       />
       <Layout>
         <Card
@@ -60,10 +70,32 @@ export default function Dashboard() {
           date={'14. April 2021'}
           onClick={() => setModalOpen(true)}
         />
-      </Layout>
-      {/* <div className={styles.cards}>
-        <div className={styles.cards__wrapper}>{hotels}</div>
-      </div> */}
+      </Layout> */}
     </div>
   );
+}
+
+export async function getStaticProps() {
+  let messages = [];
+
+  try {
+    const response = await axios.get(BASE_URL + 'messages', {
+      headers: {
+        // Authorization: `Bearer ${token}`,
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGVjOTc5MzA5YzdlMDAxNTlhMTdjYSIsImlhdCI6MTYyMDE5ODEyNiwiZXhwIjoxNjIyNzkwMTI2fQ.xzBcesCn3fgLLQK6sb0RIljamjZrIGKX6jqtGcwKkMc`,
+      },
+    });
+
+    // console.log(response);
+
+    messages = response.data;
+  } catch (error) {
+    console.log(error);
+  }
+
+  return {
+    props: {
+      messages: messages,
+    },
+  };
 }

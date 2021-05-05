@@ -6,7 +6,17 @@ import Validation from '../components/Validation';
 import { CLOSE } from '../constants/assets';
 import { BASE_URL } from '../constants/api';
 
-export default function Modal({ open, onClose, name, email, number, id }) {
+export default function Modal({
+  open,
+  onClose,
+  name,
+  email,
+  number,
+  id,
+  message,
+}) {
+  // console.log(message);
+
   if (!open) return null;
 
   const [status, setStatus] = useState(null);
@@ -50,6 +60,9 @@ export default function Modal({ open, onClose, name, email, number, id }) {
       <div className={styles.overlay} />
       <div className={styles.modal}>
         <img src={CLOSE} className={styles.close_button} onClick={onClose} />
+        {message.Subject}
+        {message.Message}
+        {message.Date}
         <form onSubmit={submitEnquiry} className={styles.form}>
           {name === true ? (
             <Input
