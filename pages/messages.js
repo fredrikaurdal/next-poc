@@ -13,20 +13,12 @@ export default function Dashboard() {
   // const [param, setParam] = useState();
   const [modalOpen, setModalOpen] = useState(false);
 
-  const router = useRouter();
-
-  const [authenticated, setAuthenticated] = useState(false);
-
   // Check if JWT token exists
   useEffect(() => {
     const jwt = getFromStorage('token');
 
-    if (jwt.length > 0) {
-      setAuthenticated(true);
-      console.log(authenticated);
-    } else {
+    if (jwt.length < 1) {
       router.push('/login');
-      console.log(authenticated);
     }
   });
 
