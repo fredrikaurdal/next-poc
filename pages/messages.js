@@ -58,8 +58,7 @@ export default function Dashboard() {
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis ullamcorper elit. Ipsum dolor sit amet, consectetur elit...'
           }
           date={'14. April 2021'}
-          // onClick={() => setModalOpen(true)}
-          onClick={() => console.log(test)}
+          onClick={() => setModalOpen(true)}
         />
       </Layout>
       {/* <div className={styles.cards}>
