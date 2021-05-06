@@ -11,7 +11,7 @@ import { getFromStorage } from '../utils/storage';
 
 export default function Messages({ messages }) {
   // const [param, setParam] = useState();
-  // const [token, setToken] = useState();
+  const [token, setToken] = useState();
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState();
 
@@ -21,7 +21,7 @@ export default function Messages({ messages }) {
   useEffect(() => {
     const jwt = getFromStorage('token');
 
-    // setToken(jwt);
+    setToken(jwt);
 
     if (jwt.length < 1) {
       router.push('/login');
@@ -35,7 +35,6 @@ export default function Messages({ messages }) {
         onClose={() => setModalOpen(false)}
         message={modalContent}
         date={message.createdAt}
-        // button={true}
       />
       <Card
         param={42}
@@ -52,10 +51,16 @@ export default function Messages({ messages }) {
 
   return (
     <>
+      {/* {!token === undefined ? ( */}
+      {/* <> */}
       <Navbar />
       <Layout>
         <div className={styles.layout__wrapper}>{content}</div>
       </Layout>
+      {/* </>
+      ) : (
+        ''
+      )} */}
     </>
   );
 }

@@ -1,8 +1,25 @@
-@import '../partials/_base';
-@import '../partials/_typography';
-
 .layout__wrapper {
   display: inline-grid;
-  grid-auto-flow: column;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
   gap: 48px;
+}
+
+@media screen and (max-width: 1263px) {
+  .layout__wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .layout__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 655px) {
+  .layout__wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

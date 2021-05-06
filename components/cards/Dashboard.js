@@ -3,8 +3,6 @@ import styles from '../../styles/sass/components/cards/Dashboard.module.scss';
 export default function Card({ title, description, date, onClick }) {
   const dateObject = new Date(date);
 
-  console.log(title.length);
-
   const day = dateObject.toLocaleString('en-GB', { day: 'numeric' });
   const month = dateObject.toLocaleString('en-GB', { month: 'long' });
   const year = dateObject.toLocaleString('en-GB', { year: 'numeric' });
