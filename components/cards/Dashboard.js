@@ -22,7 +22,7 @@ export default function Card({
   );
   return (
     <>
-      {open && modal}
+      {open === id && modal}
       <div className={styles.card} onClick={onClick}>
         <div className={styles.card__top}>
           <div className={styles.title}>

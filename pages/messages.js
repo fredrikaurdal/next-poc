@@ -12,7 +12,7 @@ import { getFromStorage } from '../utils/storage';
 export default function Messages({ messages }) {
   // const [param, setParam] = useState();
   const [token, setToken] = useState();
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState('');
   const [modalContent, setModalContent] = useState();
 
   const router = useRouter();
@@ -42,11 +42,11 @@ export default function Messages({ messages }) {
         description={message.Message}
         date={message.createdAt}
         onClick={() => {
-          setModalOpen(true);
+          setModalOpen(message.id);
           setModalContent(message);
         }}
         open={modalOpen}
-        onClose={() => setModalOpen(false)}
+        onClose={() => setModalOpen('')}
         message={modalContent}
         date={message.createdAt}
         id={message.id}
