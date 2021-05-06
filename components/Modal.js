@@ -64,54 +64,56 @@ export default function Modal({
   return (
     <>
       <div className={styles.overlay} />
-      <div className={styles.modal}>
-        <img src={CLOSE} className={styles.close_button} onClick={onClose} />
-        {!form && (
-          <div className={styles.modal__content}>
-            <h2>{!form && message.Subject}</h2>
-            <div className={styles.paragraph}>{!form && message.Message}</div>
-            <div className={styles.identifiers}>
-              <div>{!form && message.Name}</div>
-              <div>{!form && message.Email}</div>
-              <div>{!form && `${day}. ${month} ${year}`}</div>
+      <div className={styles.modal_wrapper}>
+        <div className={styles.modal}>
+          <img src={CLOSE} className={styles.close_button} onClick={onClose} />
+          {!form && (
+            <div className={styles.modal__content}>
+              <h2>{!form && message.Subject}</h2>
+              <div className={styles.paragraph}>{!form && message.Message}</div>
+              <div className={styles.identifiers}>
+                <div>{!form && message.Name}</div>
+                <div>{!form && message.Email}</div>
+                <div>{!form && `${day}. ${month} ${year}`}</div>
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {form && (
-          <form onSubmit={submitEnquiry} className={styles.form}>
-            {name === true ? (
-              <Input
-                placeholder={'Name *'}
-                name="Name"
-                error={validation['Name']}
-              />
-            ) : null}
-            {email === true ? (
-              <Input
-                placeholder={'Email *'}
-                name="Email"
-                type="email"
-                error={validation['Email']}
-              />
-            ) : null}
-            {number === true ? (
-              <Input
-                placeholder={'Phone number'}
-                name="Phone_number"
-                type="number"
-              />
-            ) : null}
-            {form && (
-              <Button
-                value="Enquire"
-                style={['button__input_submit']}
-                input={true}
-              />
-            )}
-            {form && <Validation status={status} />}
-          </form>
-        )}
+          {form && (
+            <form onSubmit={submitEnquiry} className={styles.form}>
+              {name === true ? (
+                <Input
+                  placeholder={'Name *'}
+                  name="Name"
+                  error={validation['Name']}
+                />
+              ) : null}
+              {email === true ? (
+                <Input
+                  placeholder={'Email *'}
+                  name="Email"
+                  type="email"
+                  error={validation['Email']}
+                />
+              ) : null}
+              {number === true ? (
+                <Input
+                  placeholder={'Phone number'}
+                  name="Phone_number"
+                  type="number"
+                />
+              ) : null}
+              {form && (
+                <Button
+                  value="Enquire"
+                  style={['button__input_submit']}
+                  input={true}
+                />
+              )}
+              {form && <Validation status={status} />}
+            </form>
+          )}
+        </div>
       </div>
     </>
   );

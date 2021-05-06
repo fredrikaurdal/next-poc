@@ -24,21 +24,22 @@ export default function Messages() {
       router.push('/login');
     }
 
-    {/* prettier-ignore */}
-    (async function getMessages() {
-      try {
-        const response = await axios.get(BASE_URL + 'messages', {
-          headers: {
-            Authorization: `Bearer ${jwt}`,
-          },
-        });
-
-        setMessages(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
+    getMessages(jwt);
   });
+
+  async function getMessages(jwt) {
+    try {
+      const response = await axios.get(BASE_URL + 'messages', {
+        headers: {
+          Authorization: `Bearer ${jwt}`,
+        },
+      });
+
+      setMessages(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   const content = messages.map((message) => (
     <div key={message.id}>
