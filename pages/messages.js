@@ -9,11 +9,10 @@ import axios from 'axios';
 import Modal from '../components/Modal';
 import { getFromStorage } from '../utils/storage';
 
-export default function Messages({ messages }) {
-  // const [param, setParam] = useState();
-  const [token, setToken] = useState();
+export default function Messages() {
   const [modalOpen, setModalOpen] = useState('');
   const [modalContent, setModalContent] = useState();
+  const [messages, setMessages] = useState([]);
 
   const router = useRouter();
 
@@ -21,21 +20,28 @@ export default function Messages({ messages }) {
   useEffect(() => {
     const jwt = getFromStorage('token');
 
-    setToken(jwt);
-
     if (jwt.length < 1) {
       router.push('/login');
     }
+
+    {/* prettier-ignore */}
+    (async function getMessages() {
+      try {
+        const response = await axios.get(BASE_URL + 'messages', {
+          headers: {
+            Authorization: `Bearer ${jwt}`,
+          },
+        });
+
+        setMessages(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   });
 
   const content = messages.map((message) => (
     <div key={message.id}>
-      {/* <Modal
-      open={modalOpen}
-      onClose={() => setModalOpen(false)}
-      message={modalContent}
-      date={message.createdAt}
-      /> */}
       <Card
         param={42}
         title={message.Subject}
@@ -56,41 +62,10 @@ export default function Messages({ messages }) {
 
   return (
     <>
-      {/* {!token === undefined ? ( */}
-      {/* <> */}
       <Navbar />
       <Layout>
         <div className={styles.layout__wrapper}>{content}</div>
       </Layout>
-      {/* </>
-      ) : (
-        ''
-      )} */}
     </>
   );
-}
-
-export async function getStaticProps() {
-  let messages = [];
-
-  try {
-    const response = await axios.get(BASE_URL + 'messages', {
-      headers: {
-        // Authorization: `Bearer ${token}`,
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGVjOTc5MzA5YzdlMDAxNTlhMTdjYSIsImlhdCI6MTYyMDE5ODEyNiwiZXhwIjoxNjIyNzkwMTI2fQ.xzBcesCn3fgLLQK6sb0RIljamjZrIGKX6jqtGcwKkMc`,
-      },
-    });
-
-    // console.log(response);
-
-    messages = response.data;
-  } catch (error) {
-    console.log(error);
-  }
-
-  return {
-    props: {
-      messages: messages,
-    },
-  };
 }
