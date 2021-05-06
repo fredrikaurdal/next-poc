@@ -30,12 +30,12 @@ export default function Messages({ messages }) {
 
   const content = messages.map((message) => (
     <div key={message.id}>
-      <Modal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        message={modalContent}
-        date={message.createdAt}
-      />
+      {/* <Modal
+      open={modalOpen}
+      onClose={() => setModalOpen(false)}
+      message={modalContent}
+      date={message.createdAt}
+      /> */}
       <Card
         param={42}
         title={message.Subject}
@@ -45,6 +45,11 @@ export default function Messages({ messages }) {
           setModalOpen(true);
           setModalContent(message);
         }}
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        message={modalContent}
+        date={message.createdAt}
+        id={message.id}
       />
     </div>
   ));
