@@ -16,10 +16,10 @@ export default function Hotels(props) {
 
     const res = await fetch(BASE_URL + 'messages', {
       body: JSON.stringify({
-        Subject: event.target.Subject.value,
-        Name: event.target.Name.value,
-        Email: event.target.Email.value,
-        Message: event.target.Message.value,
+        Subject: event.target.Subject.value.trim(),
+        Name: event.target.Name.value.trim(),
+        Email: event.target.Email.value.trim(),
+        Message: event.target.Message.value.trim(),
       }),
       headers: {
         'Content-Type': 'application/json',

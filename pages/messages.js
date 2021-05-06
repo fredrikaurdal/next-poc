@@ -10,8 +10,6 @@ import Modal from '../components/Modal';
 import { getFromStorage } from '../utils/storage';
 
 export default function Messages({ messages }) {
-  console.log(messages);
-
   // const [param, setParam] = useState();
   // const [token, setToken] = useState();
   const [modalOpen, setModalOpen] = useState(false);

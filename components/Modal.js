@@ -34,9 +34,9 @@ export default function Modal({
 
     const res = await fetch(BASE_URL + 'enquiries', {
       body: JSON.stringify({
-        Name: event.target.Name.value,
-        Email: event.target.Email.value,
-        Phone_number: event.target.Phone_number.value,
+        Name: event.target.Name.value.trim(),
+        Email: event.target.Email.value.trim(),
+        Phone_number: event.target.Phone_number.value.trim(),
         Hotel_id: id,
       }),
       headers: {
