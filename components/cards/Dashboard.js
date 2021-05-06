@@ -10,6 +10,8 @@ export default function Card({
   onClose,
   message,
   id,
+  email,
+  phone_number,
 }) {
   const dateObject = new Date(date);
 
@@ -28,11 +30,18 @@ export default function Card({
           <div className={styles.title}>
             {title.length > 20 ? title.substring(0, 20) + '...' : title}
           </div>
-          <div className={styles.description}>
-            {description.length > 119
-              ? description.substring(0, 120) + '...'
-              : description}
-          </div>
+          {description ? (
+            <div className={styles.description}>
+              {description.length > 119
+                ? description.substring(0, 120) + '...'
+                : description}
+            </div>
+          ) : (
+            <div className={styles.description}>
+              <div>{email}</div>
+              <div>{phone_number}</div>
+            </div>
+          )}
         </div>
         <div className={styles.card__bottom}>
           <div className={styles.date}>

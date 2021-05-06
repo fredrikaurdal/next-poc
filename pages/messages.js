@@ -6,7 +6,6 @@ import Navbar from '../components/DashboardNavbar';
 import Layout from '../components/layouts/Dashboard';
 import Card from '../components/cards/Dashboard';
 import axios from 'axios';
-import Modal from '../components/Modal';
 import { getFromStorage } from '../utils/storage';
 
 export default function Messages() {

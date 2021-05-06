@@ -34,8 +34,12 @@ a.card {
 }
 
 .description {
+  display: grid;
   font-size: 12px;
   line-height: 140%;
+  color: $color-dove-gray;
+  grid-auto-flow: row;
+  gap: 12px;
 }
 
 .date {
