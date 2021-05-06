@@ -4,15 +4,22 @@
   display: grid;
   grid-template-rows: auto auto;
   width: 256px;
+  min-height: 184px;
   background-color: $color-white;
   border-radius: 5px;
   box-shadow: $shadow-default;
+  cursor: pointer;
+}
+
+a.card {
+  text-decoration: none;
+  color: inherit;
 }
 
 .card__top {
   padding: 24px 24px 18px 24px;
-  border-top: 0.5px solid $color-mercury;
-  border-bottom: 0.5px solid $color-mercury;
+  border-bottom: 1px solid $color-mercury;
+  min-height: 93px;
 }
 
 .card__bottom {

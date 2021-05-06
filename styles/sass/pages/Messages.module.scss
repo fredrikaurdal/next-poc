@@ -1,2 +1,8 @@
 @import '../partials/_base';
 @import '../partials/_typography';
+
+.layout__wrapper {
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 48px;
+}

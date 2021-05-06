@@ -10,18 +10,20 @@ import Modal from '../components/Modal';
 import { getFromStorage } from '../utils/storage';
 
 export default function Messages({ messages }) {
-  // console.log(messages);
+  console.log(messages);
 
   // const [param, setParam] = useState();
-  const [token, setToken] = useState();
+  // const [token, setToken] = useState();
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState();
+
+  const router = useRouter();
 
   // Check if JWT token exists
   useEffect(() => {
     const jwt = getFromStorage('token');
 
-    setToken(jwt);
+    // setToken(jwt);
 
     if (jwt.length < 1) {
       router.push('/login');
@@ -29,49 +31,32 @@ export default function Messages({ messages }) {
   });
 
   const content = messages.map((message) => (
-    <>
+    <div key={message.id}>
       <Modal
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         message={modalContent}
       />
-      <Layout>
-        <Card
-          key={message.id}
-          param={42}
-          title={message.Subject}
-          description={message.Message}
-          date={message.createdAt}
-          onClick={() => {
-            setModalOpen(true);
-            setModalContent(message);
-          }}
-        />
-      </Layout>
-    </>
+      <Card
+        param={42}
+        title={message.Subject}
+        description={message.Message}
+        date={message.createdAt}
+        onClick={() => {
+          setModalOpen(true);
+          setModalContent(message);
+        }}
+      />
+    </div>
   ));
 
   return (
-    <div>
+    <>
       <Navbar />
-      {content}
-      {/* <Modal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        messages={messages}
-      />
       <Layout>
-        <Card
-          param={42}
-          title={'Booking room question'}
-          description={
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis ullamcorper elit. Ipsum dolor sit amet, consectetur elit...'
-          }
-          date={'14. April 2021'}
-          onClick={() => setModalOpen(true)}
-        />
-      </Layout> */}
-    </div>
+        <div className={styles.layout__wrapper}>{content}</div>
+      </Layout>
+    </>
   );
 }
 
