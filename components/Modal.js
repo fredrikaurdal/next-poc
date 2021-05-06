@@ -14,8 +14,14 @@ export default function Modal({
   number,
   id,
   message,
+  date,
+  form,
 }) {
-  // console.log(message);
+  const dateObject = new Date(date);
+
+  const day = dateObject.toLocaleString('en-GB', { day: 'numeric' });
+  const month = dateObject.toLocaleString('en-GB', { month: 'long' });
+  const year = dateObject.toLocaleString('en-GB', { year: 'numeric' });
 
   if (!open) return null;
 
@@ -60,39 +66,52 @@ export default function Modal({
       <div className={styles.overlay} />
       <div className={styles.modal}>
         <img src={CLOSE} className={styles.close_button} onClick={onClose} />
-        {message.Subject}
-        {message.Message}
-        {message.Date}
-        <form onSubmit={submitEnquiry} className={styles.form}>
-          {name === true ? (
-            <Input
-              placeholder={'Name *'}
-              name="Name"
-              error={validation['Name']}
-            />
-          ) : null}
-          {email === true ? (
-            <Input
-              placeholder={'Email *'}
-              name="Email"
-              type="email"
-              error={validation['Email']}
-            />
-          ) : null}
-          {number === true ? (
-            <Input
-              placeholder={'Phone number'}
-              name="Phone_number"
-              type="number"
-            />
-          ) : null}
-          <Button
-            value="Enquire"
-            style={['button__input_submit']}
-            input={true}
-          />
-          {<Validation status={status} />}
-        </form>
+        {!form && (
+          <div className={styles.modal__content}>
+            <h2>{!form && message.Subject}</h2>
+            <div className={styles.paragraph}>{!form && message.Message}</div>
+            <div className={styles.identifiers}>
+              <div>{!form && message.Name}</div>
+              <div>{!form && message.Email}</div>
+              <div>{!form && `${day}. ${month} ${year}`}</div>
+            </div>
+          </div>
+        )}
+
+        {form && (
+          <form onSubmit={submitEnquiry} className={styles.form}>
+            {name === true ? (
+              <Input
+                placeholder={'Name *'}
+                name="Name"
+                error={validation['Name']}
+              />
+            ) : null}
+            {email === true ? (
+              <Input
+                placeholder={'Email *'}
+                name="Email"
+                type="email"
+                error={validation['Email']}
+              />
+            ) : null}
+            {number === true ? (
+              <Input
+                placeholder={'Phone number'}
+                name="Phone_number"
+                type="number"
+              />
+            ) : null}
+            {form && (
+              <Button
+                value="Enquire"
+                style={['button__input_submit']}
+                input={true}
+              />
+            )}
+            {form && <Validation status={status} />}
+          </form>
+        )}
       </div>
     </>
   );

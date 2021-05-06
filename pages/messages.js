@@ -36,6 +36,8 @@ export default function Messages({ messages }) {
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         message={modalContent}
+        date={message.createdAt}
+        // button={true}
       />
       <Card
         param={42}

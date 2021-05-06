@@ -1,5 +1,4 @@
 @import '../partials/_base';
-@import '../partials/_typography';
 
 .modal {
   position: fixed;
@@ -12,6 +11,31 @@
   padding: 48px;
   border-radius: 5px;
   z-index: 999;
+  max-width: 512px;
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__content h2 {
+  margin-bottom: 18px;
+}
+
+.paragraph {
+  font-size: 16px;
+  line-height: 140%;
+  margin-bottom: 24px;
+}
+
+.identifiers {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 12px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
 }
 
 .form {

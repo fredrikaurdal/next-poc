@@ -24,6 +24,7 @@ export default function Hotel({ hotel }) {
         email={true}
         number={true}
         id={hotel.id}
+        form={true}
       />
       <div className={styles.content}>
         <div className={styles.content__left}>

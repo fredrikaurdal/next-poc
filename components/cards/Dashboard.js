@@ -6,14 +6,16 @@ export default function Card({ title, description, date, onClick }) {
   const day = dateObject.toLocaleString('en-GB', { day: 'numeric' });
   const month = dateObject.toLocaleString('en-GB', { month: 'long' });
   const year = dateObject.toLocaleString('en-GB', { year: 'numeric' });
-
-  console.log(year);
   return (
     <div className={styles.card} onClick={onClick}>
       <div className={styles.card__top}>
-        <div className={styles.title}>{title}</div>
+        <div className={styles.title}>
+          {title.length > 20 ? title.substring(0, 20) + '...' : title}
+        </div>
         <div className={styles.description}>
-          {description.substring(0, 140) + '...'}
+          {description.length > 120
+            ? description.substring(0, 120) + '...'
+            : description}
         </div>
       </div>
       <div className={styles.card__bottom}>
