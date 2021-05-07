@@ -24,9 +24,6 @@ export default function NavbarDashboard(props) {
     router.push('/login');
   }
 
-  // console.log(currentPage);
-  // currentPage === '/messages' &&
-
   return (
     <div className={styles.navbar}>
       <Link href="/">

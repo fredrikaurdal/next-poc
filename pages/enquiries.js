@@ -54,7 +54,7 @@ export default function Enquiries() {
         }}
         open={modalOpen}
         onClose={() => setModalOpen('')}
-        message={modalContent}
+        enquiry={modalContent}
         date={enquiry.createdAt}
         id={enquiry.id}
       />

@@ -21,11 +21,13 @@
   border-radius: 5px;
   z-index: 999;
   max-width: 512px;
+  width: 100%;
 }
 
 .modal__content {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .modal__content h2 {
@@ -36,11 +38,22 @@
   font-size: 16px;
   line-height: 140%;
   margin-bottom: 24px;
+  // display: grid;
+  // grid-auto-flow: row;
+  // gap: 16px;
+}
+
+.paragraph > div {
+  margin-bottom: 16px;
+}
+
+.paragraph > div:last-child {
+  margin-bottom: 0;
 }
 
 .identifiers {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-auto-flow: row;
   gap: 12px;
   font-weight: 500;
   font-size: 12px;

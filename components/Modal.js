@@ -14,6 +14,7 @@ export default function Modal({
   number,
   id,
   message,
+  enquiry,
   date,
   form,
 }) {
@@ -69,11 +70,20 @@ export default function Modal({
           <img src={CLOSE} className={styles.close_button} onClick={onClose} />
           {!form && (
             <div className={styles.modal__content}>
-              <h2>{!form && message.Subject}</h2>
-              <div className={styles.paragraph}>{!form && message.Message}</div>
+              {!form && message && <h2>{message.Subject}</h2>}
+              <div className={styles.paragraph}>
+                {!form && message && message.Message}
+                {!form && enquiry && <div>{enquiry.Name}</div>}
+                {!form && enquiry && <div>{enquiry.Email}</div>}
+                {!form && enquiry && <div>{enquiry.Phone_number}</div>}
+              </div>
               <div className={styles.identifiers}>
-                <div>{!form && message.Name}</div>
-                <div>{!form && message.Email}</div>
+                {!form && message && (
+                  <div>{!form && message && message.Name}</div>
+                )}
+                {!form && message && (
+                  <div>{!form && message && message.Email}</div>
+                )}
                 <div>{!form && `${day}. ${month} ${year}`}</div>
               </div>
             </div>

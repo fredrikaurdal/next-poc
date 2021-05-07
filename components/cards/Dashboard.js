@@ -9,6 +9,7 @@ export default function Card({
   open,
   onClose,
   message,
+  enquiry,
   id,
   email,
   phone_number,
@@ -20,7 +21,13 @@ export default function Card({
   const year = dateObject.toLocaleString('en-GB', { year: 'numeric' });
 
   const modal = (
-    <Modal open={open} onClose={onClose} message={message} date={date} />
+    <Modal
+      open={open}
+      onClose={onClose}
+      message={message}
+      enquiry={enquiry}
+      date={date}
+    />
   );
   return (
     <>
