@@ -8,10 +8,13 @@ import Card from '../components/cards/Dashboard';
 import axios from 'axios';
 import { getFromStorage } from '../utils/storage';
 
-export default function Enquiries() {
+export default function Enquiries({ hotelData }) {
   const [modalOpen, setModalOpen] = useState('');
   const [modalContent, setModalContent] = useState();
   const [enquiries, setEnquiries] = useState([]);
+  // const [hotels, setHotels] = useState(hotelData);
+
+  // console.log(hotels);
 
   const router = useRouter();
 
@@ -40,11 +43,24 @@ export default function Enquiries() {
     }
   }
 
+  // (async function getHotels() {
+  //   try {
+  //     const response = await axios.get(BASE_URL + 'hotels');
+
+  //     setHotels(response.data);
+
+  //     // console.log(hotels);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // })();
+
   const content = enquiries.map((enquiry) => (
     <div key={enquiry.id}>
       <Card
         param={42}
-        title={enquiry.Name}
+        name={enquiry.Name}
+        title={enquiry.id}
         email={enquiry.Email}
         phone_number={enquiry.Phone_number}
         date={enquiry.createdAt}
@@ -57,6 +73,8 @@ export default function Enquiries() {
         enquiry={modalContent}
         date={enquiry.createdAt}
         id={enquiry.id}
+        hotel_id={enquiry.Hotel_id}
+        hotels={hotelData}
       />
     </div>
   ));
@@ -69,4 +87,19 @@ export default function Enquiries() {
       </Layout>
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  const res = await fetch(BASE_URL + 'hotels');
+  const hotelData = await res.json();
+
+  if (!hotelData) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { hotelData },
+  };
 }

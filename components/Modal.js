@@ -17,6 +17,7 @@ export default function Modal({
   enquiry,
   date,
   form,
+  hotelTitle,
 }) {
   const dateObject = new Date(date);
 
@@ -62,6 +63,8 @@ export default function Modal({
     }
   };
 
+  // console.log(hotelTitle);
+
   return (
     <>
       <div className={styles.overlay} />
@@ -71,6 +74,7 @@ export default function Modal({
           {!form && (
             <div className={styles.modal__content}>
               {!form && message && <h2>{message.Subject}</h2>}
+              {!form && enquiry && <h2>{hotelTitle}</h2>}
               <div className={styles.paragraph}>
                 {!form && message && message.Message}
                 {!form && enquiry && <div>{enquiry.Name}</div>}
