@@ -1,14 +1,5 @@
 @import '../partials/_base';
 
-// .modal_wrapper {
-//   position: absolute;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 50%;
-//   height: 100vh;
-// }
-
 .modal {
   position: fixed;
   display: grid;
@@ -21,6 +12,9 @@
   border-radius: 5px;
   z-index: 999;
   max-width: 512px;
+}
+
+.modal__full_width {
   width: 100%;
 }
 

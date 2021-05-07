@@ -63,13 +63,15 @@ export default function Modal({
     }
   };
 
-  // console.log(hotelTitle);
-
   return (
     <>
       <div className={styles.overlay} />
       <div className={styles.modal_wrapper}>
-        <div className={styles.modal}>
+        <div
+          className={`${styles.modal} ${
+            message || (enquiry && styles.modal__full_width)
+          }`}
+        >
           <img src={CLOSE} className={styles.close_button} onClick={onClose} />
           {!form && (
             <div className={styles.modal__content}>

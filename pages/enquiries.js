@@ -12,9 +12,6 @@ export default function Enquiries({ hotelData }) {
   const [modalOpen, setModalOpen] = useState('');
   const [modalContent, setModalContent] = useState();
   const [enquiries, setEnquiries] = useState([]);
-  // const [hotels, setHotels] = useState(hotelData);
-
-  // console.log(hotels);
 
   const router = useRouter();
 
@@ -42,18 +39,6 @@ export default function Enquiries({ hotelData }) {
       console.log(error);
     }
   }
-
-  // (async function getHotels() {
-  //   try {
-  //     const response = await axios.get(BASE_URL + 'hotels');
-
-  //     setHotels(response.data);
-
-  //     // console.log(hotels);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // })();
 
   const content = enquiries.map((enquiry) => (
     <div key={enquiry.id}>

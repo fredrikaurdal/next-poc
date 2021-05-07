@@ -32,14 +32,6 @@ export default function Card({
     });
   }
 
-  // const currentHotel = hotels.filter((obj) => {
-  //   return obj.id === hotel_id;
-  // });
-
-  // const [hotel, setHotel] = useState(currentHotel);
-
-  // console.log(currentHotel[0].Name);
-
   const modal = (
     <Modal
       open={open}
