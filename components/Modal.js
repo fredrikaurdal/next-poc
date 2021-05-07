@@ -114,9 +114,10 @@ export default function Modal({
               ) : null}
               {number === true ? (
                 <Input
-                  placeholder={'Phone number'}
+                  placeholder={'Phone number *'}
                   name="Phone_number"
                   type="number"
+                  error={validation['Phone_number']}
                 />
               ) : null}
               {form && (
