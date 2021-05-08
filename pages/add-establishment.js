@@ -52,6 +52,7 @@ export default function AddEstablishment() {
 
     setStatus(response.status);
     console.log(response.status);
+    console.log(json);
 
     if (json.data && json.data.errors) {
       setValidation(json.data.errors);

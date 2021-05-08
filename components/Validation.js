@@ -10,11 +10,19 @@ export default function Validation(props) {
   } else if (props.error) {
     console.log(`Props: ${JSON.stringify(props).includes('Phone_number')}`);
 
+    let error;
+
+    if (JSON.stringify(props).includes('Phone_number')) {
+      error = 'Phone number is missing';
+    } else if (JSON.stringify(props).includes('Price')) {
+      error = 'Price is missing';
+    } else if (JSON.stringify(props).includes('Rating')) {
+      error = 'Rating is missing';
+    }
+
     markup = (
       <div className={`${styles.status} ${styles.status__error}`}>
-        {JSON.stringify(props).includes('Phone_number')
-          ? 'Phone number must be at least 8 characters'
-          : props.error}
+        {error ? error : props.error}
       </div>
     );
   }
