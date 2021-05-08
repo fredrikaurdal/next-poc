@@ -29,12 +29,8 @@
 }
 
 .paragraph {
-  font-size: 16px;
-  line-height: 140%;
   margin-bottom: 24px;
-  // display: grid;
-  // grid-auto-flow: row;
-  // gap: 16px;
+  color: $color-mine-shaft;
 }
 
 .paragraph > div {
@@ -79,4 +75,10 @@
   bottom: 0;
   background-color: $overlay-default;
   z-index: 999;
+}
+
+@media screen and (max-width: 700px) {
+  .modal__full_width {
+    width: auto;
+  }
 }

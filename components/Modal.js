@@ -77,7 +77,7 @@ export default function Modal({
             <div className={styles.modal__content}>
               {!form && message && <h2>{message.Subject}</h2>}
               {!form && enquiry && <h2>{hotelTitle}</h2>}
-              <div className={styles.paragraph}>
+              <div className={`paragraph ${styles.paragraph}`}>
                 {!form && message && message.Message}
                 {!form && enquiry && <div>{enquiry.Name}</div>}
                 {!form && enquiry && <div>{enquiry.Email}</div>}
