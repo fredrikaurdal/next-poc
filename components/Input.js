@@ -25,6 +25,7 @@ export default function Input(props) {
         name={props.name}
         required={props.required}
         type={props.type}
+        onChange={props.onChange}
       />
     );
   }

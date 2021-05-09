@@ -13,6 +13,7 @@ export default function AddEstablishment() {
   const [status, setStatus] = useState(null);
   const [validation, setValidation] = useState({});
   const [token, setToken] = useState();
+  const [file, setFile] = useState();
 
   const router = useRouter();
 
@@ -27,25 +28,50 @@ export default function AddEstablishment() {
     setToken(jwt);
   });
 
+  const handleChange = (event) => {
+    console.log('event.target.files: ', event.target.files);
+
+    setFile(event.target.files[0]);
+  };
+
+  useEffect(() => {
+    console.log('setFile: ', file);
+  }, [file]);
+
+  // useEffect(() => {
   const submitEnquiry = async (event) => {
     event.preventDefault();
 
     console.log(token);
 
-    const res = await fetch(BASE_URL + 'hotels', {
-      body: JSON.stringify({
-        Name: event.target.Name.value.trim(),
-        Description: event.target.Description.value.trim(),
-        Rating: event.target.Rating.value.trim(),
-        Price: event.target.Price.value.trim(),
-        Address: event.target.Address.value.trim(),
-      }),
+    const fileData = new FormData();
+    fileData.append('files', file);
+
+    console.log('fileData: ', fileData);
+
+    const res = await fetch(BASE_URL + 'upload', {
+      body: fileData,
       headers: {
-        'Content-Type': 'application/json',
+        // 'Content-Type': 'multipart/form-data',
         Authorization: `Bearer ${token}`,
       },
       method: 'POST',
     });
+
+    // const res = await fetch(BASE_URL + 'hotels', {
+    //   body: JSON.stringify({
+    //     Name: event.target.Name.value.trim(),
+    //     Description: event.target.Description.value.trim(),
+    //     Rating: event.target.Rating.value.trim(),
+    //     Price: event.target.Price.value.trim(),
+    //     Address: event.target.Address.value.trim(),
+    //   }),
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     Authorization: `Bearer ${token}`,
+    //   },
+    //   method: 'POST',
+    // });
 
     const response = await res;
     const json = await res.json();
@@ -64,6 +90,7 @@ export default function AddEstablishment() {
       setValidation({});
     }
   };
+  // });
 
   return (
     <>
@@ -72,7 +99,7 @@ export default function AddEstablishment() {
         {/* <div className={styles.layout__wrapper}> */}
         <div className={styles.form_wrapper}>
           <form onSubmit={submitEnquiry} className={styles.form}>
-            <Input
+            {/* <Input
               placeholder={'Name *'}
               name="Name"
               error={validation['Name']}
@@ -98,13 +125,14 @@ export default function AddEstablishment() {
               placeholder={'Address *'}
               name="Address"
               error={validation['Address']}
-            />
+            /> */}
             {/* Only accept a certain dimension */}
             <Input
               placeholder={'Image *'}
               name="Image"
               error={validation['Image']}
               type="file"
+              onChange={handleChange}
             />
             <Button
               value="Send"
