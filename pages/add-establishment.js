@@ -120,7 +120,7 @@ export default function AddEstablishment() {
     const json = await res.json();
 
     setStatus(response.status);
-    console.log(response.status);
+    console.log('response.status', response.status);
     console.log(json);
 
     if (json.data && json.data.errors) {
@@ -176,6 +176,7 @@ export default function AddEstablishment() {
               error={validation['Image']}
               type="file"
               onChange={handleChange}
+              required={true}
             />
             <Button
               value="Send"

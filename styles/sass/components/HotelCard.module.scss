@@ -13,6 +13,12 @@
   width: 192px;
   border-radius: 5px;
   box-shadow: $shadow-result-card;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.card__name {
+  cursor: pointer;
 }
 
 .card__center {
