@@ -42,17 +42,60 @@ export default function AddEstablishment() {
   const submitEnquiry = async (event) => {
     event.preventDefault();
 
-    console.log(token);
+    // console.log(token);
+    // console.log(event);
 
-    const fileData = new FormData();
-    fileData.append('files', file);
+    const formNodes = event.target.childNodes;
+    // console.log('Form nodes: ', formNodes);
+    // console.log('Node type: ', formNodes[2].attributes['type'].value);
 
-    console.log('fileData: ', fileData);
+    const formData = new FormData();
 
-    const res = await fetch(BASE_URL + 'upload', {
-      body: fileData,
+    // const formElements = formElement.elements;
+
+    const data = {};
+
+    for (let i = 0; i < formNodes.length; i++) {
+      const currentNode = formNodes[i];
+      console.log('currentNode', currentNode);
+      if (
+        currentNode.attributes['type'] === undefined ||
+        !['submit', 'file'].includes(currentNode.attributes['type'].value)
+      ) {
+        data[currentNode.name] = currentNode.value;
+      } else if (currentNode.attributes['type'].value === 'file') {
+        if (currentNode.files.length === 1) {
+          // const file = currentNode.files[0];
+          // formData.append(`files.${currentNode.name}`, file, file.name);
+          formData.append(`files.${currentNode.name}`, file, file.name);
+        }
+        //   else {
+        //   for (let i = 0; i < currentNode.files.length; i++) {
+        //     const file = currentNode.files[i];
+
+        //     formData.append(`files.${currentNode.name}`, file, file.name);
+        //   }
+        // }
+      }
+    }
+
+    console.log('data', data);
+
+    formData.append('data', JSON.stringify(data));
+
+    console.log(formData);
+
+    // request.open('POST', `${HOST}/restaurants`);
+
+    // request.send(formData);
+
+    // const fileData = new FormData();
+
+    // fileData.append('files', file);
+
+    const res = await fetch(BASE_URL + 'hotels', {
+      body: formData,
       headers: {
-        // 'Content-Type': 'multipart/form-data',
         Authorization: `Bearer ${token}`,
       },
       method: 'POST',
@@ -99,7 +142,7 @@ export default function AddEstablishment() {
         {/* <div className={styles.layout__wrapper}> */}
         <div className={styles.form_wrapper}>
           <form onSubmit={submitEnquiry} className={styles.form}>
-            {/* <Input
+            <Input
               placeholder={'Name *'}
               name="Name"
               error={validation['Name']}
@@ -125,7 +168,7 @@ export default function AddEstablishment() {
               placeholder={'Address *'}
               name="Address"
               error={validation['Address']}
-            /> */}
+            />
             {/* Only accept a certain dimension */}
             <Input
               placeholder={'Image *'}
