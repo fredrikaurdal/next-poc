@@ -12,7 +12,7 @@
   line-height: 74px;
   font-family: $font-home-heading;
   margin: 0;
-  padding-bottom: 7px;
+  // padding-bottom: 7px;
 }
 
 .heading span {
@@ -38,6 +38,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  // padding-top: 128px;
   width: 100%;
   margin: 69px 24px 0 24px;
 }
@@ -45,25 +46,27 @@
 .content__wrapper {
   display: grid;
   grid-auto-flow: row;
-  gap: 17px;
+  gap: 18px;
 }
 
 .input {
   background-color: $color-white;
   border-radius: 5px;
-  box-shadow: $shadow-default;
+  box-shadow: $shadow-input;
   padding: 18px;
   max-width: 256px;
   border: none;
   font-size: 16px;
+  font-weight: 500;
+  margin-top: 6px;
 }
 
 .input::placeholder {
   font-style: italic;
   font-weight: 300;
   font-size: 16px;
-  line-height: 19px;
   color: $color-silver-chalice;
+  font-family: $font-primary;
 }
 
 @media screen and (max-width: 1300px) {
