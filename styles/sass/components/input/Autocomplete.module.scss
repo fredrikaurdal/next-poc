@@ -1,0 +1,48 @@
+@import '../../partials/base';
+
+.autocomplete {
+  position: absolute;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 18px;
+  background-color: $color-white;
+  margin-top: 8px;
+  padding: 18px;
+  width: 100%;
+  max-width: 256px;
+  border-radius: 5px;
+  box-shadow: $shadow-input;
+}
+
+.result {
+  display: grid;
+  grid-template-columns: 35px auto;
+  gap: 16px;
+}
+
+.result img {
+  width: 34px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.description {
+  display: grid;
+  grid-auto-flow: row;
+  align-self: center;
+  gap: 6px;
+}
+
+.description__heading {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  color: $color-mine-shaft;
+}
+
+.description__address {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-dove-gray;
+}

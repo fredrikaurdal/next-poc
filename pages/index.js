@@ -1,5 +1,6 @@
 import styles from '../styles/sass/pages/Home.module.scss';
 import Navbar from '../components/Navbar';
+import HomeSearch from '../components/input/HomeSearch';
 import { HOME_IMAGE_RIGHT } from '../constants/assets';
 
 export default function Home() {
@@ -17,10 +18,7 @@ export default function Home() {
                 <div className="description">
                   Comfortable rooms in the heart of the city centre
                 </div>
-                <input
-                  className={styles.input}
-                  placeholder="Enter hotel name"
-                />
+                <HomeSearch />
               </div>
             </div>
           </div>
