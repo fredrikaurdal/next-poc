@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 export default function HomeSearch({ hotels }) {
   const [query, setQuery] = useState('');
-  const [result, setResult] = useState([]);
+  const [results, setResults] = useState([]);
 
   const handleChange = (input) => {
     setQuery(input);
@@ -17,7 +17,11 @@ export default function HomeSearch({ hotels }) {
       hotel.Name.toLowerCase().includes(query.toLowerCase())
     );
 
-    setResult(filterHotels);
+    setResults(filterHotels);
+
+    if (query === '') {
+      setResults([]);
+    }
   }, [query]);
 
   // console.log('hotels:', result);
@@ -29,7 +33,7 @@ export default function HomeSearch({ hotels }) {
         placeholder="Enter hotel name"
         onChange={(e) => handleChange(e.target.value)}
       />
-      <Autocomplete results={result} />
+      <Autocomplete results={results} />
     </div>
   );
 }

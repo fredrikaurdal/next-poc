@@ -18,13 +18,19 @@
   display: grid;
   grid-template-columns: 35px auto;
   gap: 16px;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
 }
 
 .result img {
   width: 34px;
-  height: auto;
+  height: 34px;
   border-radius: 5px;
   box-shadow: $shadow-default;
+  object-fit: cover;
 }
 
 .description {
