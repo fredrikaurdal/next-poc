@@ -2,8 +2,11 @@ import styles from '../styles/sass/pages/Home.module.scss';
 import Navbar from '../components/Navbar';
 import HomeSearch from '../components/input/HomeSearch';
 import { HOME_IMAGE_RIGHT } from '../constants/assets';
+import { BASE_URL } from '../constants/api';
 
-export default function Home() {
+export default function Home({ hotelData }) {
+  // console.log(hotelData);
+
   return (
     <>
       <div className={styles.background}>
@@ -18,7 +21,7 @@ export default function Home() {
                 <div className="description">
                   Comfortable rooms in the heart of the city centre
                 </div>
-                <HomeSearch />
+                <HomeSearch hotels={hotelData} />
               </div>
             </div>
           </div>
@@ -27,4 +30,19 @@ export default function Home() {
       </div>
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  const res = await fetch(BASE_URL + 'hotels');
+  const hotelData = await res.json();
+
+  if (!hotelData) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { hotelData },
+  };
 }
