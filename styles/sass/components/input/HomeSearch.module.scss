@@ -2,9 +2,13 @@
 
 .homesearch {
   position: relative;
-  // width: 100%;
+  width: 100%;
   // display: flex;
   // justify-content: center;
+
+  // justify-self: center;
+
+  // max-width: 192px;
 }
 
 .input {
@@ -12,7 +16,7 @@
   border-radius: 5px;
   box-shadow: $shadow-input;
   padding: 18px;
-  // width: 100%;
+  width: 100%;
   max-width: 256px;
   border: none;
   font-size: 14px;
@@ -35,14 +39,16 @@
   .input::placeholder {
     text-align: center;
   }
+
+  // .homesearch {
+  //   // display: flex;
+  //   // justify-content: center;
+  //   margin: auto;
+  // }
 }
 
 @media screen and (max-width: 400px) {
   .input {
     max-width: 192px;
   }
-
-  // .homesearch {
-  //   width: 100%;
-  // }
 }
