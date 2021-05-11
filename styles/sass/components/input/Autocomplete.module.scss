@@ -12,7 +12,7 @@
   max-width: 256px;
   border-radius: 5px;
   box-shadow: $shadow-input;
-  max-height: 128px;
+  max-height: 140px;
   overflow-y: auto;
   // overflow: scroll;
 }
@@ -25,7 +25,7 @@
   // padding: 18px;
 }
 
-.result:last-child {
+.result__extra_margin:last-child {
   padding-bottom: 18px;
 }
 
@@ -46,6 +46,7 @@
   grid-auto-flow: row;
   align-self: center;
   gap: 6px;
+  // justify-items: start;
 }
 
 .description__heading {
@@ -71,14 +72,7 @@
 }
 
 @media screen and (max-width: 400px) {
-  // .autocomplete {
-  //   padding: auto;
-  // }
-
   .autocomplete {
-    max-width: 192px;
-    // left: 50%;
-    // -webkit-transform: translateX(-50%);
-    // transform: translateX(-50%);
+    max-width: 220px;
   }
 }

@@ -20,6 +20,10 @@
   font-family: $font-primary;
 }
 
+.input:focus::placeholder {
+  color: transparent;
+}
+
 .input:-moz-placeholder {
   font-size: 14px;
   line-height: 17px;

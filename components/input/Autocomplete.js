@@ -9,7 +9,12 @@ export default function Autocomplete({ results }) {
     >
       {results.map((result) => (
         <Link href={'hotel/' + result.id}>
-          <div className={styles.result} key={result.id}>
+          <div
+            className={`${styles.result} ${
+              results.length > 2 && styles.result__extra_margin
+            }`}
+            key={result.id}
+          >
             <img src={result.Image[0].formats.thumbnail.url} />
             <div className={styles.description}>
               <div className={styles.description__heading}>{result.Name}</div>
