@@ -44,6 +44,7 @@
 .content__wrapper {
   display: grid;
   grid-auto-flow: row;
+  // grid-template-columns: auto;
   gap: 18px;
 }
 
@@ -79,5 +80,11 @@
   .heading {
     font-size: 48px;
     line-height: 58px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .content {
+    margin-top: 192px;
   }
 }

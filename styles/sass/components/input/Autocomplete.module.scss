@@ -8,10 +8,12 @@
   background-color: $color-white;
   margin-top: 8px;
   padding: 18px;
-  width: 100%;
   max-width: 256px;
   border-radius: 5px;
   box-shadow: $shadow-input;
+  max-height: 128px;
+  overflow-y: auto;
+  // overflow: scroll;
 }
 
 .result {
@@ -19,6 +21,11 @@
   grid-template-columns: 35px auto;
   gap: 16px;
   cursor: pointer;
+  // padding: 18px;
+}
+
+.result:last-child {
+  padding-bottom: 18px;
 }
 
 .hide {
