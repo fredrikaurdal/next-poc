@@ -1,87 +1,11 @@
-import { useState } from 'react';
-import styles from '../styles/sass/pages/Contact.module.scss';
-import Input from '../components/Input';
-import Button from '../components/Button';
-import Validation from '../components/Validation';
 import Navbar from '../components/Navbar';
-import { BASE_URL } from '../constants/api';
+import Form from '../components/Form';
 
-export default function Hotels(props) {
-  const [status, setStatus] = useState(null);
-  const [validation, setValidation] = useState({});
-  const [loading, setLoading] = useState(false);
-
-  const submitEnquiry = async (event) => {
-    event.preventDefault();
-
-    setLoading(true);
-
-    const res = await fetch(BASE_URL + 'messages', {
-      body: JSON.stringify({
-        Subject: event.target.Subject.value.trim(),
-        Name: event.target.Name.value.trim(),
-        Email: event.target.Email.value.trim(),
-        Message: event.target.Message.value.trim(),
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    });
-
-    const response = await res;
-    const json = await res.json();
-
-    setStatus(response.status);
-    console.log(response.status);
-
-    setTimeout(function () {
-      setStatus(null);
-      setLoading(false);
-    }, 3000);
-
-    if (json.data && json.data.errors) {
-      setValidation(json.data.errors);
-      console.log(json.data.errors);
-    }
-
-    if (response.status === 200) {
-      event.target.reset();
-      setValidation({});
-    }
-  };
-
+export default function Hotels() {
   return (
     <>
       <Navbar />
-      <div className={styles.form_wrapper}>
-        <form onSubmit={submitEnquiry} className={styles.form}>
-          <Input
-            placeholder={'Subject *'}
-            name="Subject"
-            error={validation['Subject']}
-          />
-          <Input
-            placeholder={'Name *'}
-            name="Name"
-            error={validation['Name']}
-          />
-          <Input
-            placeholder={'Email *'}
-            name="Email"
-            type="email"
-            error={validation['Email']}
-          />
-          <Input
-            placeholder={'Message *'}
-            name="Message"
-            error={validation['Message']}
-            textarea={true}
-          />
-          <Button value="Send" style={['button__input_submit']} input={true} />
-          <Validation status={status} loading={loading} />
-        </form>
-      </div>
+      <Form formType={'contact'} />
     </>
   );
 }
