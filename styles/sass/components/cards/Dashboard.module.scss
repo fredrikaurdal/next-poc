@@ -11,6 +11,10 @@
   cursor: pointer;
 }
 
+.card:hover {
+  box-shadow: $shadow-button;
+}
+
 a.card {
   text-decoration: none;
   color: inherit;

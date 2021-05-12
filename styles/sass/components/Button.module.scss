@@ -6,7 +6,6 @@
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-
   font-weight: 600;
 }
 
@@ -14,6 +13,10 @@
   background: $color-botticelli;
   color: $color-san-marino;
   padding: 16px 32px;
+}
+
+.button__hotel_listing:hover {
+  box-shadow: $shadow-button;
 }
 
 .button__input_submit {
@@ -25,6 +28,10 @@
   line-height: 19px;
   font-family: $font-primary;
   border: none;
+}
+
+.button__input_submit:hover {
+  box-shadow: $shadow-button-dark;
 }
 
 .button__input_submit.button__input_submit__login {
