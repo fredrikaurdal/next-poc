@@ -35,6 +35,11 @@ export default function Hotels(props) {
     setStatus(response.status);
     console.log(response.status);
 
+    setTimeout(function () {
+      setStatus(null);
+      setLoading(false);
+    }, 3000);
+
     if (json.data && json.data.errors) {
       setValidation(json.data.errors);
       console.log(json.data.errors);

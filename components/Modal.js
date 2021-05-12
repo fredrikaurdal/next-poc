@@ -54,6 +54,11 @@ export default function Modal({
 
     setStatus(response.status);
 
+    setTimeout(function () {
+      setStatus(null);
+      setLoading(false);
+    }, 3000);
+
     if (json.data && json.data.errors) {
       setValidation(json.data.errors);
       console.log(json.data.errors);

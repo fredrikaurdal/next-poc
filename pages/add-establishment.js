@@ -111,7 +111,7 @@ export default function AddEstablishment() {
     setTimeout(function () {
       setStatus(null);
       setLoading(false);
-    }, 5000);
+    }, 3000);
 
     console.log('response.status', response.status);
     console.log(json);
