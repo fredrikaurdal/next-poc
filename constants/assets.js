@@ -12,3 +12,6 @@ export const CLOSE =
 
 export const HOME_IMAGE_RIGHT =
   'https://project-exam-2.s3.eu-north-1.amazonaws.com/sharon_christina_rorvik_fwcnv0_W_Rs_TY_unsplash_cropped_compressed_5480db2dfd.jpg';
+
+export const LOADING =
+  'https://project-exam-2.s3.eu-north-1.amazonaws.com/loading_33648d3631.gif';

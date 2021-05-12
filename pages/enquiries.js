@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import styles from '../styles/sass/pages/Enquiries.module.scss';
 import { BASE_URL } from '../constants/api';
+import { LOADING } from '../constants/assets';
 import Navbar from '../components/DashboardNavbar';
 import Layout from '../components/layouts/Dashboard';
 import Card from '../components/cards/Dashboard';
@@ -68,7 +69,13 @@ export default function Enquiries({ hotelData }) {
     <>
       <Navbar />
       <Layout>
-        <div className={styles.layout__wrapper}>{content}</div>
+        <div className={styles.layout__wrapper}>
+          {content.length < 1 ? (
+            <img src={LOADING} className={styles.loading} />
+          ) : (
+            content
+          )}
+        </div>
       </Layout>
     </>
   );

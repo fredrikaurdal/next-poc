@@ -6,6 +6,12 @@
   gap: 48px;
 }
 
+.loading {
+  width: 32px;
+  height: auto;
+  position: absolute;
+}
+
 @media screen and (max-width: 1263px) {
   .layout__wrapper {
     grid-template-columns: repeat(3, 1fr);

@@ -1,4 +1,5 @@
 import styles from '../styles/sass/components/Validation.module.scss';
+import { LOADING } from '../constants/assets';
 
 export default function Validation(props) {
   let markup;
@@ -11,12 +12,7 @@ export default function Validation(props) {
   }
 
   if (props.loading && props.status === null) {
-    markup = (
-      <img
-        src="https://project-exam-2.s3.eu-north-1.amazonaws.com/loading_33648d3631.gif"
-        className={styles.loading}
-      />
-    );
+    markup = <img src={LOADING} className={styles.loading} />;
   }
 
   if (props.status === 200) {
