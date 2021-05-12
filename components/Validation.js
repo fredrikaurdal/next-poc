@@ -3,6 +3,18 @@ import styles from '../styles/sass/components/Validation.module.scss';
 export default function Validation(props) {
   let markup;
 
+  console.log('props.loading: ', props.loading);
+  console.log('props.status: ', props.status);
+
+  if (props.loading && props.status === null) {
+    markup = (
+      <img
+        src="https://project-exam-2.s3.eu-north-1.amazonaws.com/loading_33648d3631.gif"
+        className={styles.loading}
+      />
+    );
+  }
+
   if (props.status === 200) {
     markup = (
       <div className={`${styles.status}`}>{'Submitted successfully'}</div>
@@ -26,5 +38,7 @@ export default function Validation(props) {
       </div>
     );
   }
+
+  console.log('markup: ', markup);
   return <>{markup}</>;
 }

@@ -28,11 +28,13 @@ export default function Modal({
   if (!open) return null;
 
   const [status, setStatus] = useState(null);
-
   const [validation, setValidation] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const submitEnquiry = async (event) => {
     event.preventDefault();
+
+    setLoading(true);
 
     const res = await fetch(BASE_URL + 'enquiries', {
       body: JSON.stringify({
@@ -127,7 +129,7 @@ export default function Modal({
                   input={true}
                 />
               )}
-              {form && <Validation status={status} />}
+              {form && <Validation status={status} loading={loading} />}
             </form>
           )}
         </div>

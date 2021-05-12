@@ -14,6 +14,7 @@ export default function AddEstablishment() {
   const [validation, setValidation] = useState({});
   const [token, setToken] = useState();
   const [file, setFile] = useState();
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
@@ -42,16 +43,11 @@ export default function AddEstablishment() {
   const submitEnquiry = async (event) => {
     event.preventDefault();
 
-    // console.log(token);
-    // console.log(event);
+    setLoading(true);
 
     const formNodes = event.target.childNodes;
-    // console.log('Form nodes: ', formNodes);
-    // console.log('Node type: ', formNodes[2].attributes['type'].value);
 
     const formData = new FormData();
-
-    // const formElements = formElement.elements;
 
     const data = {};
 
@@ -65,17 +61,8 @@ export default function AddEstablishment() {
         data[currentNode.name] = currentNode.value;
       } else if (currentNode.attributes['type'].value === 'file') {
         if (currentNode.files.length === 1) {
-          // const file = currentNode.files[0];
-          // formData.append(`files.${currentNode.name}`, file, file.name);
           formData.append(`files.${currentNode.name}`, file, file.name);
         }
-        //   else {
-        //   for (let i = 0; i < currentNode.files.length; i++) {
-        //     const file = currentNode.files[i];
-
-        //     formData.append(`files.${currentNode.name}`, file, file.name);
-        //   }
-        // }
       }
     }
 
@@ -183,7 +170,7 @@ export default function AddEstablishment() {
               style={['button__input_submit']}
               input={true}
             />
-            <Validation status={status} />
+            <Validation status={status} loading={loading} />
           </form>
         </div>
         {/* </div> */}
