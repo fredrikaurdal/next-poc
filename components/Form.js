@@ -5,7 +5,7 @@ import Button from '../components/Button';
 import Validation from '../components/Validation';
 import { BASE_URL } from '../constants/api';
 
-export default function Form({ token, formType }) {
+export default function Form({ token, formType, id }) {
   const [file, setFile] = useState();
   const [status, setStatus] = useState(null);
   const [validation, setValidation] = useState({});
@@ -66,6 +66,19 @@ export default function Form({ token, formType }) {
           Name: event.target.Name.value.trim(),
           Email: event.target.Email.value.trim(),
           Message: event.target.Message.value.trim(),
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      });
+    } else if (formType === 'enquiry') {
+      res = await fetch(BASE_URL + 'enquiries', {
+        body: JSON.stringify({
+          Name: event.target.Name.value.trim(),
+          Email: event.target.Email.value.trim(),
+          Phone_number: event.target.Phone_number.value.trim(),
+          Hotel_id: id,
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -165,6 +178,28 @@ export default function Form({ token, formType }) {
                 name="Message"
                 error={validation['Message']}
                 textarea={true}
+              />
+            </>
+          )}
+
+          {formType === 'enquiry' && (
+            <>
+              <Input
+                placeholder={'Name *'}
+                name="Name"
+                error={validation['Name']}
+              />
+              <Input
+                placeholder={'Email *'}
+                name="Email"
+                type="email"
+                error={validation['Email']}
+              />
+              <Input
+                placeholder={'Phone number *'}
+                name="Phone_number"
+                type="number"
+                error={validation['Phone_number']}
               />
             </>
           )}
