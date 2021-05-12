@@ -6,6 +6,10 @@ export default function Validation(props) {
   console.log('props.loading: ', props.loading);
   console.log('props.status: ', props.status);
 
+  if (!props.loading && props.status === null) {
+    markup = null;
+  }
+
   if (props.loading && props.status === null) {
     markup = (
       <img

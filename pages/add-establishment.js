@@ -107,6 +107,12 @@ export default function AddEstablishment() {
     const json = await res.json();
 
     setStatus(response.status);
+
+    setTimeout(function () {
+      setStatus(null);
+      setLoading(false);
+    }, 5000);
+
     console.log('response.status', response.status);
     console.log(json);
 
