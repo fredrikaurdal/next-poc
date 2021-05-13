@@ -1,10 +1,5 @@
-import { useState } from 'react';
 import styles from '../styles/sass/components/Modal.module.scss';
-import Input from '../components/Input';
-import Button from '../components/Button';
-import Validation from '../components/Validation';
 import { CLOSE } from '../constants/assets';
-import { BASE_URL } from '../constants/api';
 import Form from '../components/Form';
 
 export default function Modal({

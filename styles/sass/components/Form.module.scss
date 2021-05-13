@@ -7,10 +7,13 @@
 }
 
 .form {
-  margin-top: 64px;
   display: grid;
   grid-template-rows: auto auto auto;
   justify-items: center;
   gap: 18px;
   width: 192px;
+}
+
+.top_margin {
+  margin-top: 128px;
 }

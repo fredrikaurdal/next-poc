@@ -4,6 +4,7 @@ import Navbar from '../components/DashboardNavbar';
 import Layout from '../components/layouts/Dashboard';
 import { getFromStorage } from '../utils/storage';
 import Form from '../components/Form';
+import styles from '../styles/sass/pages/AddEstablishment.module.scss';
 
 export default function AddEstablishment() {
   const [token, setToken] = useState();
@@ -25,7 +26,11 @@ export default function AddEstablishment() {
     <>
       <Navbar />
       <Layout>
-        <Form token={token} formType={'add-establishment'} />
+        <Form
+          token={token}
+          formType={'add-establishment'}
+          style={'top-margin'}
+        />
       </Layout>
     </>
   );

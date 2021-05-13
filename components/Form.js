@@ -113,7 +113,11 @@ export default function Form({ token, formType, id }) {
 
   return (
     <>
-      <div className={styles.form_wrapper}>
+      <div
+        className={`${styles.form_wrapper} ${
+          formType === 'contact' && styles.top_margin
+        }`}
+      >
         <form onSubmit={submitEnquiry} className={styles.form}>
           {formType === 'add-establishment' && (
             <>
