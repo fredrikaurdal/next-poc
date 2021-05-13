@@ -1,12 +1,10 @@
 import { BASE_URL } from '../constants/api';
-import Navbar from '../components/DashboardNavbar';
 import Layout from '../components/layouts/Dashboard';
 import EnquiriesCard from '../components/cards/Enquiries';
 
 export default function Enquiries({ hotelData }) {
   return (
     <>
-      <Navbar />
       <Layout>
         <EnquiriesCard hotelData={hotelData} />
       </Layout>

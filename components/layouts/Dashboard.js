@@ -3,6 +3,7 @@ import styles from '../../styles/sass/components/layouts/Dashboard.module.scss';
 import React from 'react';
 import { getFromStorage } from '../../utils/storage';
 import { useRouter } from 'next/router';
+import Navbar from '../DashboardNavbar';
 
 export default function Layout({ children }) {
   const [token, setToken] = useState();
@@ -19,8 +20,11 @@ export default function Layout({ children }) {
     setToken(jwt);
   });
   return (
-    <div className={styles.layout}>
-      {React.cloneElement(children, { token: token })}
-    </div>
+    <>
+      <Navbar />
+      <div className={styles.layout}>
+        {React.cloneElement(children, { token: token })}
+      </div>
+    </>
   );
 }
