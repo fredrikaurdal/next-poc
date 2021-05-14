@@ -8,8 +8,6 @@ import Price from '../../components/Price';
 import Modal from '../../components/Modal';
 import { useState } from 'react';
 
-// >>> Include hotel ID in enquiry POST request
-
 export default function Hotel({ hotel }) {
   const [modalOpen, setModalOpen] = useState(false);
 

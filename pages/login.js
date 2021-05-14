@@ -10,10 +10,7 @@ import { BASE_URL } from '../constants/api';
 import { saveToStorage, getFromStorage } from '../utils/storage';
 
 export default function Login() {
-  // Request with all fields
   const [status, setStatus] = useState(null);
-
-  // Individual form fields
   const [validation, setValidation] = useState();
 
   const submitLogin = async (event) => {

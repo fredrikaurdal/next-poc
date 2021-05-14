@@ -20,7 +20,7 @@ export default function Validation(props) {
       <div className={`${styles.status}`}>{'Submitted successfully'}</div>
     );
   } else if (props.error) {
-    console.log(`Props: ${JSON.stringify(props).includes('Phone_number')}`);
+    console.log('props.error', props.error);
 
     let error;
 

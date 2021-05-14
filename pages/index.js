@@ -5,8 +5,6 @@ import { HOME_IMAGE_RIGHT } from '../constants/assets';
 import { BASE_URL } from '../constants/api';
 
 export default function Home({ hotelData }) {
-  // console.log(hotelData);
-
   return (
     <>
       <div className={styles.background}>
