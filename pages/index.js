@@ -30,7 +30,7 @@ export default function Home({ hotelData }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const res = await fetch(BASE_URL + 'hotels');
   const hotelData = await res.json();
 

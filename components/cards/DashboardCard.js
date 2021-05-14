@@ -1,6 +1,5 @@
 import styles from '../../styles/sass/components/cards/DashboardCard.module.scss';
 import Modal from '../Modal';
-import { useState } from 'react';
 
 export default function Card({
   name,

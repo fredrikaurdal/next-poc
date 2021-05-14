@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import styles from '../../styles/sass/pages/Enquiries.module.scss';
 import { BASE_URL } from '../../constants/api';
 import { LOADING } from '../../constants/assets';

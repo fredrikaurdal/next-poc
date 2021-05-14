@@ -24,8 +24,6 @@ export default function HomeSearch({ hotels }) {
     }
   }, [query]);
 
-  // console.log('hotels:', result);
-
   return (
     <div className={styles.homesearch}>
       <input
