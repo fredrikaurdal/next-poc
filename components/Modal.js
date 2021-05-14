@@ -1,6 +1,6 @@
 import styles from '../styles/sass/components/Modal.module.scss';
 import { CLOSE } from '../constants/assets';
-import Form from '../components/Form';
+import Form from '../components/inputs/Form';
 
 export default function Modal({
   open,

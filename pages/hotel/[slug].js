@@ -1,6 +1,6 @@
 import styles from '../../styles/sass/pages/[slug].module.scss';
 import { BASE_URL } from '../../constants/api';
-import Navbar from '../../components/Navbar';
+import Navbar from '../../components/navbar/MainNavbar';
 import axios from 'axios';
 import Rating from '../../components/Rating';
 import Button from '../../components/Button';

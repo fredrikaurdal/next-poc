@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import Button from '../components/Button';
-import styles from '../styles/sass/components/HotelCard.module.scss';
-import Rating from '../components/Rating';
-import Price from '../components/Price';
+import Button from '../Button';
+import styles from '../../styles/sass/components/cards/HotelCard.module.scss';
+import Rating from '../Rating';
+import Price from '../Price';
 
 export default function HotelCard(props) {
   return (

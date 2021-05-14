@@ -1,7 +1,7 @@
 import styles from '../styles/sass/pages/Hotels.module.scss';
 import { BASE_URL } from '../constants/api';
-import Navbar from '../components/Navbar';
-import HotelCard from '../components/HotelCard';
+import Navbar from '../components/navbar/MainNavbar';
+import HotelCard from '../components/cards/HotelCard';
 import axios from 'axios';
 
 export default function Hotels(props) {

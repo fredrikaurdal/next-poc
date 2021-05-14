@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import styles from '../../styles/sass/pages/Enquiries.module.scss';
 import { BASE_URL } from '../../constants/api';
 import { LOADING } from '../../constants/assets';
-import Card from '../../components/cards/Dashboard';
+import Card from '../../components/cards/DashboardCard';
 import axios from 'axios';
 
 export default function Enquiries({ hotelData, token }) {

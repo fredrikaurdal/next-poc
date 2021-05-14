@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from '../../styles/sass/pages/Messages.module.scss';
 import { BASE_URL } from '../../constants/api';
 import { LOADING } from '../../constants/assets';
-import Card from '../../components/cards/Dashboard';
+import Card from '../../components/cards/DashboardCard';
 import axios from 'axios';
 
 export default function Messages({ token }) {

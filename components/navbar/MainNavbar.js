@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import styles from '../styles/sass/components/Navbar.module.scss';
-import { BRAND } from '../constants/assets';
-import { getFromStorage } from '../utils/storage';
+import styles from '../../styles/sass/components/navbar/MainNavbar.module.scss';
+import { BRAND } from '../../constants/assets';
+import { getFromStorage } from '../../utils/storage';
 
 export default function Navbar(props) {
   const [authenticated, setAuthenticated] = useState(false);

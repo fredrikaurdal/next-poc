@@ -1,5 +1,5 @@
-import styles from '../styles/sass/components/Validation.module.scss';
-import { LOADING } from '../constants/assets';
+import styles from '../../styles/sass/components/inputs/Validation.module.scss';
+import { LOADING } from '../../constants/assets';
 
 export default function Validation(props) {
   let markup;

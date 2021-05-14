@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import styles from '../styles/sass/components/DashboardNavbar.module.scss';
-import { BRAND_LETTER } from '../constants/assets';
-import { getFromStorage, removeFromStorage } from '../utils/storage';
+import styles from '../../styles/sass/components/navbar/DashboardNavbar.module.scss';
+import { BRAND_LETTER } from '../../constants/assets';
+import { getFromStorage, removeFromStorage } from '../../utils/storage';
 
 export default function NavbarDashboard(props) {
   const router = useRouter();

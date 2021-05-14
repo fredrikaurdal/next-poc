@@ -14,7 +14,6 @@
   box-shadow: $shadow-input;
   max-height: 140px;
   overflow-y: auto;
-  // overflow: scroll;
 }
 
 .result {
@@ -22,7 +21,6 @@
   grid-template-columns: 35px auto;
   gap: 16px;
   cursor: pointer;
-  // padding: 18px;
 }
 
 .result__extra_margin:last-child {
@@ -46,7 +44,6 @@
   grid-auto-flow: row;
   align-self: center;
   gap: 6px;
-  // justify-items: start;
 }
 
 .description__heading {

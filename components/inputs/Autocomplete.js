@@ -1,4 +1,4 @@
-import styles from '../../styles/sass/components/input/Autocomplete.module.scss';
+import styles from '../../styles/sass/components/inputs/Autocomplete.module.scss';
 import Link from 'next/link';
 
 export default function Autocomplete({ results }) {

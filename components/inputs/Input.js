@@ -1,5 +1,5 @@
-import styles from '../styles/sass/components/Input.module.scss';
-import Validation from '../components/Validation';
+import styles from '../../styles/sass/components/inputs/Input.module.scss';
+import Validation from './Validation';
 
 export default function Input(props) {
   let inputTag;

@@ -1,5 +1,5 @@
-import styles from '../../styles/sass/components/input/HomeSearch.module.scss';
-import Autocomplete from '../../components/input/Autocomplete';
+import styles from '../../styles/sass/components/inputs/HomeSearch.module.scss';
+import Autocomplete from './Autocomplete';
 import { useState, useEffect } from 'react';
 
 export default function HomeSearch({ hotels }) {

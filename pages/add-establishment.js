@@ -1,5 +1,5 @@
 import Layout from '../components/layouts/Dashboard';
-import Form from '../components/Form';
+import Form from '../components/inputs/Form';
 
 export default function AddEstablishment() {
   return (

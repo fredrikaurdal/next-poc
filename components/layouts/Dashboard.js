@@ -3,7 +3,7 @@ import styles from '../../styles/sass/components/layouts/Dashboard.module.scss';
 import React from 'react';
 import { getFromStorage } from '../../utils/storage';
 import { useRouter } from 'next/router';
-import Navbar from '../DashboardNavbar';
+import Navbar from '../navbar/DashboardNavbar';
 
 export default function Layout({ children }) {
   const [token, setToken] = useState();

@@ -1,9 +1,9 @@
-import styles from '../styles/sass/components/Form.module.scss';
+import styles from '../../styles/sass/components/inputs/Form.module.scss';
 import { useState } from 'react';
-import Input from '../components/Input';
-import Button from '../components/Button';
-import Validation from '../components/Validation';
-import { BASE_URL } from '../constants/api';
+import Input from '../inputs/Input';
+import Button from '../Button';
+import Validation from './Validation';
+import { BASE_URL } from '../../constants/api';
 
 export default function Form({ token, formType, id }) {
   const [file, setFile] = useState();

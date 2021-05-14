@@ -1,5 +1,4 @@
-@import '../partials/_base';
-@import '../partials/_typography';
+@import '../../partials/_base';
 
 .status {
   color: $color-mountain-meadow;
@@ -16,6 +15,4 @@
 .loading {
   width: 32px;
   height: auto;
-  // position: absolute;
-  // margin: auto;
 }

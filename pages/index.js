@@ -1,6 +1,6 @@
 import styles from '../styles/sass/pages/Home.module.scss';
-import Navbar from '../components/Navbar';
-import HomeSearch from '../components/input/HomeSearch';
+import Navbar from '../components/navbar/MainNavbar';
+import HomeSearch from '../components/inputs/HomeSearch';
 import { HOME_IMAGE_RIGHT } from '../constants/assets';
 import { BASE_URL } from '../constants/api';
 

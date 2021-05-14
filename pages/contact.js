@@ -1,5 +1,5 @@
-import Navbar from '../components/Navbar';
-import Form from '../components/Form';
+import Navbar from '../components/navbar/MainNavbar';
+import Form from '../components/inputs/Form';
 
 export default function Hotels() {
   return (
