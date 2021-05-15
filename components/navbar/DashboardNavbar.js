@@ -64,15 +64,9 @@ export default function NavbarDashboard(props) {
           </a>
         </Link>
       </div>
-      {!authenticated ? (
-        <Link href="/login">
-          <a>Login</a>
-        </Link>
-      ) : (
-        <div className={styles.logout} onClick={logout}>
-          <a>Logout</a>
-        </div>
-      )}
+      <div className={styles.logout} onClick={logout}>
+        <a>Logout</a>
+      </div>
     </div>
   );
 }
