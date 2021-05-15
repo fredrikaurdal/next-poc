@@ -10,8 +10,6 @@ export default function Messages({ token }) {
   const [modalContent, setModalContent] = useState();
   const [messages, setMessages] = useState([]);
 
-  console.log('MessagesCard.js', BASE_URL);
-
   // Check if JWT token exists
   useEffect(() => {
     getMessages(token);

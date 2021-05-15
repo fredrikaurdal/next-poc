@@ -82,7 +82,12 @@
 }
 
 @media screen and (max-width: 400px) {
+  .grid {
+    grid-template-rows: auto auto;
+  }
+
   .content {
-    margin-top: 192px;
+    margin-top: 224px;
+    margin-bottom: 64px;
   }
 }
