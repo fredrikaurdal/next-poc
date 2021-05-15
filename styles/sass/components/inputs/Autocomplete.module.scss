@@ -10,7 +10,7 @@
   padding: 18px;
   width: 100%;
   max-width: 256px;
-  border-radius: 5px;
+  border-radius: $border-radius;
   box-shadow: $shadow-input;
   max-height: 140px;
   overflow-y: auto;
@@ -34,7 +34,7 @@
 .result img {
   width: 34px;
   height: 34px;
-  border-radius: 5px;
+  border-radius: $border-radius;
   box-shadow: $shadow-default;
   object-fit: cover;
 }

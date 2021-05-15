@@ -1,6 +1,6 @@
 import { BASE_URL } from '../constants/api';
-import Layout from '../components/layouts/Dashboard';
-import EnquiriesCard from '../components/cards/Enquiries';
+import Layout from '../components/layouts/DashboardLayout';
+import EnquiriesCard from '../components/cards/EnquiriesCard';
 
 export default function Enquiries({ hotelData }) {
   return (

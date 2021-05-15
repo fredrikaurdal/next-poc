@@ -1,4 +1,4 @@
-import styles from '../../styles/sass/pages/[slug].module.scss';
+import styles from '../../styles/sass/pages/hotel/[slug].module.scss';
 import { BASE_URL } from '../../constants/api';
 import Navbar from '../../components/navbar/MainNavbar';
 import axios from 'axios';

@@ -9,7 +9,7 @@
   transform: translate(-50%, -50%);
   background-color: $color-white;
   padding: 48px;
-  border-radius: 5px;
+  border-radius: $border-radius;
   z-index: 999;
   max-width: 512px;
 }

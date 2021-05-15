@@ -1,54 +1,50 @@
 import { useState, useEffect } from 'react';
-import styles from '../../styles/sass/pages/Enquiries.module.scss';
+import styles from '../../styles/sass/components/cards/MessagesCard.module.scss';
 import { BASE_URL } from '../../constants/api';
 import { LOADING } from '../../constants/assets';
-import Card from '../../components/cards/DashboardCard';
+import Card from './DashboardCard';
 import axios from 'axios';
 
-export default function Enquiries({ hotelData, token }) {
+export default function Messages({ token }) {
   const [modalOpen, setModalOpen] = useState('');
   const [modalContent, setModalContent] = useState();
-  const [enquiries, setEnquiries] = useState([]);
+  const [messages, setMessages] = useState([]);
 
   // Check if JWT token exists
   useEffect(() => {
-    getEnquiries(token);
+    getMessages(token);
   });
 
-  async function getEnquiries(token) {
+  async function getMessages(token) {
     try {
-      const response = await axios.get(BASE_URL + 'enquiries', {
+      const response = await axios.get(BASE_URL + 'messages', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
 
-      setEnquiries(response.data);
+      setMessages(response.data);
     } catch (error) {
       console.log(error);
     }
   }
 
-  const content = enquiries.map((enquiry) => (
-    <div key={enquiry.id}>
+  const content = messages.map((message) => (
+    <div key={message.id}>
       <Card
         param={42}
-        name={enquiry.Name}
-        title={enquiry.id}
-        email={enquiry.Email}
-        phone_number={enquiry.Phone_number}
-        date={enquiry.createdAt}
+        title={message.Subject}
+        description={message.Message}
+        date={message.createdAt}
         onClick={() => {
-          setModalOpen(enquiry.id);
-          setModalContent(enquiry);
+          setModalOpen(message.id);
+          setModalContent(message);
         }}
         open={modalOpen}
         onClose={() => setModalOpen('')}
-        enquiry={modalContent}
-        date={enquiry.createdAt}
-        id={enquiry.id}
-        hotel_id={enquiry.Hotel_id}
-        hotels={hotelData}
+        message={modalContent}
+        date={message.createdAt}
+        id={message.id}
       />
     </div>
   ));

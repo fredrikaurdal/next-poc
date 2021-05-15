@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styles from '../../styles/sass/components/layouts/Dashboard.module.scss';
+import styles from '../../styles/sass/components/layouts/DashboardLayout.module.scss';
 import React from 'react';
 import { getFromStorage } from '../../utils/storage';
 import { useRouter } from 'next/router';

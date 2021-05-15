@@ -10,7 +10,7 @@
 .card__image {
   height: 192px;
   width: 192px;
-  border-radius: 5px;
+  border-radius: $border-radius;
   box-shadow: $shadow-strong;
   object-fit: cover;
   cursor: pointer;

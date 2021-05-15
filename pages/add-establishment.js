@@ -1,4 +1,4 @@
-import Layout from '../components/layouts/Dashboard';
+import Layout from '../components/layouts/DashboardLayout';
 import Form from '../components/inputs/Form';
 
 export default function AddEstablishment() {

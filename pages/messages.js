@@ -1,5 +1,5 @@
-import Layout from '../components/layouts/Dashboard';
-import MessagesCard from '../components/cards/Messages';
+import Layout from '../components/layouts/DashboardLayout';
+import MessagesCard from '../components/cards/MessagesCard';
 
 export default function Messages() {
   return (

@@ -66,6 +66,7 @@ export default function Login() {
     }
   };
 
+  // Cand this be done without global state management?
   const router = useRouter();
 
   useEffect(() => {
@@ -77,7 +78,7 @@ export default function Login() {
   });
 
   return (
-    <div className={styles.login_wrapper}>
+    <div className={styles.login}>
       <Link href="/">
         <a>
           <img src={BRAND} className={styles.brand} />
