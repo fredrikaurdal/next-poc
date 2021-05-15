@@ -10,8 +10,6 @@ import { useState } from 'react';
 
 export default function Hotel({ hotel }) {
   const [modalOpen, setModalOpen] = useState(false);
-
-  console.log(hotel);
   return (
     <>
       <Navbar />

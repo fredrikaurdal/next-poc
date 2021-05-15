@@ -38,8 +38,6 @@ export default function Login() {
       setStatus('Wrong username or password');
     }
 
-    console.log(json);
-
     if (
       !json.user &&
       json.data[0].messages[0].id === 'Auth.form.error.email.provide'

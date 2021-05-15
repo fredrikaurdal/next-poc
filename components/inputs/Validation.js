@@ -4,9 +4,6 @@ import { LOADING } from '../../constants/assets';
 export default function Validation(props) {
   let markup;
 
-  console.log('props.loading: ', props.loading);
-  console.log('props.status: ', props.status);
-
   if (!props.loading && props.status === null) {
     markup = null;
   }
@@ -20,8 +17,6 @@ export default function Validation(props) {
       <div className={`${styles.status}`}>{'Submitted successfully'}</div>
     );
   } else if (props.error) {
-    console.log('props.error', props.error);
-
     let error;
 
     if (JSON.stringify(props).includes('Phone_number')) {
@@ -39,6 +34,5 @@ export default function Validation(props) {
     );
   }
 
-  console.log('markup: ', markup);
   return <>{markup}</>;
 }
