@@ -16,6 +16,12 @@ export default function Validation(props) {
     markup = (
       <div className={`${styles.status}`}>{'Submitted successfully'}</div>
     );
+  } else if (props.status === 403) {
+    markup = (
+      <div className={`${styles.status} ${styles.status__error}`}>
+        {'Not authorized'}
+      </div>
+    );
   } else if (props.error) {
     let error;
 
