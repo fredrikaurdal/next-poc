@@ -16,9 +16,9 @@ I started working on the project by researching websites with a similar function
 
 Each page was coded to closely resemble the Figma design. Code that needs to be re-used is added to their own component. To explore the capabilities of Next.js, different ways of rendering content has been used. The same goes for the way components are structured, to try different configurations of how this can be done as well.
 
-To style the app SASS has been used with SCSS modules, and component level styles to ensure good performance.
+To style the app **SASS** has been used with SCSS modules, and component level styles to ensure good performance.
 
-A Strapi instance was set up as the backend API, with S3 and MongoDB.
+A Strapi instance was set up as the backend API, with **S3** and **MongoDB**.
 
 All functionality has been tested to ensure that everything works as expected.
 
@@ -26,7 +26,7 @@ All functionality has been tested to ensure that everything works as expected.
 
 ### 2.1. Introduction
 
-I have built an application using Next.js that follows the requirements initially outlined in the assignment.
+I have built an application using Next.js that follows the requirements initially outlined in an assignment.
 
 All required functionality has been included. However, I have made certain technical choices as a way to explore the technologies I’m using. In a production application it would make more sense to render some parts of the app differently, changing the error checking logic and further refactoring to make the structure and data flow clearer.
 
