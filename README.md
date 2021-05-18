@@ -6,7 +6,7 @@ The project can be run with a Strapi API I have set up, by including a `.env.loc
 
 ## Login details
 
-These are view-only credentials, which allow you to log in but not add a new hotell.
+These are view-only credentials, which allow you to log in but not add a new hotel.
 
 Username: myuser
 
