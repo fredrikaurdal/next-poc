@@ -74,7 +74,7 @@ The default navbar `<MainNavbar />` checks if a JWT token exists, and then toggl
 
 All components are styled with **SASS** through SCSS modules, and reusability whenever possible with variables. Component level styles should improve performance somewhat as well, and make selector naming more concise.
 
-Considering that I’m using CSS modules in the form of SASS, I don’t have to use BEM based on what’s outlined in the assignment. I have still chosen to use a modified version of it where ‘--‘ is replaced with ‘\_\_’, because dashes are not allowed in JavaScript variables.
+Considering that I’m using CSS modules in the form of SASS, I don’t have to use BEM based on what was outlined in the assignment. I have still chosen to use a modified version of it where ‘--‘ is replaced with ‘\_\_’, because dashes are not allowed in JavaScript variables.
 
 Once the app was ready, it was thoroughly tested to see if anything didn’t work as expected.
 
