@@ -78,7 +78,7 @@ Considering that I’m using CSS modules in the form of SASS, I don’t have to 
 
 Once the app was ready, it was thoroughly tested to see if anything didn’t work as expected.
 
-After testing the application, I deployed it on Netlify. The Strapi backend is running on a Heroku Dyno, which is configured with S3 for file storage and MongoDB as the database.
+After testing the application, I deployed it on Netlify. The Strapi backend is running on a **Heroku Dyno**, which is configured with **S3** for file storage and **MongoDB** as the database.
 
 ### 2.3. Conclusion
 
