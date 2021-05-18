@@ -72,7 +72,7 @@ Form validation is done through processing Strapi responses, purely to see how t
 
 The default navbar `<MainNavbar />` checks if a JWT token exists, and then toggles a **‘Login’** or **‘Dashboard’** link. With the dashboard I have chosen to do it in a slightly different way, in order to look at how I would do it using a layout component with `<DashboardLayout />`. This component enforces protected routes, by re-directing users to the login page if they are not authorized.
 
-All components are styled with SASS through SCSS modules, and reusability whenever possible with variables. Component level styles should improve performance somewhat as well, and make selector naming more concise.
+All components are styled with **SASS** through SCSS modules, and reusability whenever possible with variables. Component level styles should improve performance somewhat as well, and make selector naming more concise.
 
 Considering that I’m using CSS modules in the form of SASS, I don’t have to use BEM based on what’s outlined in the assignment. I have still chosen to use a modified version of it where ‘--‘ is replaced with ‘\_\_’, because dashes are not allowed in JavaScript variables.
 
