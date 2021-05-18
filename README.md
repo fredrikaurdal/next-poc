@@ -60,7 +60,7 @@ A `<HotelCard />` component receives props here to render each hotel element.
 
 `/hotels/[slug]` is also set up to statically generate each page, by getting a list of paths with `getStaticPaths` and then fetching data with `getStaticProps`. When the ‘Book Now’ button is clicked a modal opens that allows the end-user to send an enquiry about the hotel. The hotel id is included in this request, which will be used to display the hotel name for each enquiry in the dashboard. `<Rating />` and `<Price />` is divided into their own components for re-use.
 
-In addition to a navbar, the /contact page only consists of a `<Form />` component. Even though requests are specified in the form component, I think it would look better to have them in each page component instead, and then share state between them with `useState`.
+In addition to a navbar, the `/contact` page only consists of a `<Form />` component. Even though requests are specified in the form component, I think it would look better to have them in each page component instead, and then share state between them with `useState`.
 
 With `/messages` and `/enquiries` there is a similar kind of logic, that each include a `<Card />` component, which is used for all modals as well. On the `/enquiries` page however, hotels data is also fetched, to match it with the hotel id that is included whenever someone makes a hotel enquiry.
 
@@ -87,7 +87,7 @@ While developing the application I did gain a better understanding about the inn
 There are some clear limitations with using Strapi as an off the shelf API. The issue that I have run into is being able to validate required fields when making POST requests, which does not always work, even though I have clearly specified it and tested everything in the GUI before making requests. As stated before, a way to solve this would be to set up API endpoints through Next.js that validate requests, and then pass those requests on to Strapi.
 
 Some of the components could be structured in a different way, but that is also a question of project requirements.
-Because I’m using component level state with the **useState** hook, access to and setting of state is not that streamlined across the application. It would make sense to use global state management with the **Context API** or **Redux** to improve this.
+Because I’m using component level state with the `useState` hook, access to and setting of state is not that streamlined across the application. It would make sense to use global state management with the **Context API** or **Redux** to improve this.
 
 Front-end error checking could make for a better user experience, by displaying errors faster, but validation does perform reasonably well once the application has been deployed.
 
