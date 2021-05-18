@@ -36,7 +36,7 @@ Because the `/hotels` and `/hotel/[slug]` pages are statically generated, they w
 
 ### 2.2. Main section of report
 
-I started the project by researching design patterns of websites that serve a similar kind of purpose. Because I was going to make an app with basic functionality, I needed to create a user interface that was somewhat basic, but still with a modern and intuitive experience.
+I started the project by researching design patterns of websites that serve a similar kind of purpose. Because I was going to make an app with basic functionality, I needed to create a user interface that was somewhat minimalistic, but still with a modern and intuitive experience.
 
 My go-to source for inspiration is Dribbble. After spending some time researching design patterns, and becoming familiar with common ways of solving this challenge, I started creating a mockup in Figma.
 
