@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { BASE_URL } from '../constants/api';
 import Layout from '../components/layouts/DashboardLayout';
 import EnquiriesCard from '../components/cards/EnquiriesCard';
@@ -5,6 +6,9 @@ import EnquiriesCard from '../components/cards/EnquiriesCard';
 export default function Enquiries({ hotelData }) {
   return (
     <>
+      <Head>
+        <title>Enquiries</title>
+      </Head>
       <Layout>
         <EnquiriesCard hotelData={hotelData} />
       </Layout>

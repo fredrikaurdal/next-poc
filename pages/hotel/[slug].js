@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import styles from '../../styles/sass/pages/hotel/[slug].module.scss';
 import { BASE_URL } from '../../constants/api';
 import Navbar from '../../components/navbar/MainNavbar';
@@ -12,6 +13,9 @@ export default function Hotel({ hotel }) {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
+      <Head>
+        <title>{hotel.Name}</title>
+      </Head>
       <Navbar />
       <Modal
         open={modalOpen}

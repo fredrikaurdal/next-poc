@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import styles from '../styles/sass/pages/Hotels.module.scss';
 import { BASE_URL } from '../constants/api';
 import Navbar from '../components/navbar/MainNavbar';
@@ -18,6 +19,9 @@ export default function Hotels(props) {
   ));
   return (
     <>
+      <Head>
+        <title>Hotels</title>
+      </Head>
       <Navbar />
       <div className={styles.cards}>
         <div className={styles.cards__wrapper}>{hotels}</div>

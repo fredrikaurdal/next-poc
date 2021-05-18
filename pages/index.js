@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import styles from '../styles/sass/pages/Home.module.scss';
 import Navbar from '../components/navbar/MainNavbar';
 import HomeSearch from '../components/inputs/HomeSearch';
@@ -7,6 +8,9 @@ import { BASE_URL } from '../constants/api';
 export default function Home({ hotelData }) {
   return (
     <>
+      <Head>
+        <title>Holidaze</title>
+      </Head>
       <div className={styles.background}>
         <div className={styles.grid}>
           <div className={styles.grid__left}>

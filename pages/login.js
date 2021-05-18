@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -76,35 +77,40 @@ export default function Login() {
   });
 
   return (
-    <div className={styles.login}>
-      <Link href="/">
-        <a>
-          <img src={BRAND} className={styles.brand} />
-        </a>
-      </Link>
-      <form onSubmit={submitLogin} className={styles.form}>
-        <Input
-          placeholder={'Username'}
-          name="Username"
-          error={validation === 'Please provide your username' && validation}
-        />
-        <Input
-          placeholder={'Password'}
-          name="Password"
-          error={validation === 'Please provide your password' && validation}
-          type={'password'}
-        />
+    <>
+      <Head>
+        <title>Login</title>
+      </Head>
+      <div className={styles.login}>
+        <Link href="/">
+          <a>
+            <img src={BRAND} className={styles.brand} />
+          </a>
+        </Link>
+        <form onSubmit={submitLogin} className={styles.form}>
+          <Input
+            placeholder={'Username'}
+            name="Username"
+            error={validation === 'Please provide your username' && validation}
+          />
+          <Input
+            placeholder={'Password'}
+            name="Password"
+            error={validation === 'Please provide your password' && validation}
+            type={'password'}
+          />
 
-        <Button
-          value="Login"
-          style={['button__input_submit', 'button__input_submit__login']}
-          input={true}
-        />
-        <Validation
-          status={status}
-          error={validation === 'Wrong username or password' && validation}
-        />
-      </form>
-    </div>
+          <Button
+            value="Login"
+            style={['button__input_submit', 'button__input_submit__login']}
+            input={true}
+          />
+          <Validation
+            status={status}
+            error={validation === 'Wrong username or password' && validation}
+          />
+        </form>
+      </div>
+    </>
   );
 }
