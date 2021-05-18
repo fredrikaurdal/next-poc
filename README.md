@@ -48,7 +48,7 @@ Except for the logo and hotels, I only have one other image, which is on the rig
 
 There are no other icons except for the star used in the rating element. The only other places where it would make sense to add some icons is with the dashboard navbar links. However, that could make them look a bit cluttered, and I wanted to spend more time on other important aspects instead.
 
-I tried a few different layouts, but I eventually settled on a minimalistic design that I thought would fit the project well. While I was designing the site in Figma, I made sure to update my style guide.
+I tried a few different layouts, but I eventually settled on a minimal design that I thought would fit the project well. While I was designing the site in Figma, I made sure to update my style guide.
 
 When I first planned the project, I thought that I would hard code all data, and then swap it out by fetching a Strapi backend. In this case it made sense to do a bit of both. Some of the pages were coded with hard coded data, and then swapped out with dynamic data, while other times I felt it was more intuitive to build the application while fetching data dynamically.
 
