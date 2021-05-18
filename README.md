@@ -2,7 +2,7 @@
 
 A live version of the app is available [here](https://pedantic-curran-5ebba4.netlify.app/) via Netlify.
 
-The project can be run with a Strapi API that has been set up, by including a `.env.local` file in the root directory, with the following variable: `NEXT_PUBLIC_BASE_URL=https://strapi-project-exam-2.herokuapp.com/`.
+The project can be run with a Strapi API I have set up, by including a `.env.local` file in the root directory, with the following variable: `NEXT_PUBLIC_BASE_URL=https://strapi-project-exam-2.herokuapp.com/`.
 
 ## Login details
 
