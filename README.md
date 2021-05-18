@@ -82,7 +82,7 @@ After testing the application, I deployed it on Netlify. The Strapi backend is r
 
 ### 2.3. Conclusion
 
-While developing the application I did gain a better understanding about the inner workings of Next.js. Although it has its quirks like any other framework, Next.js is a more straightforward way to develop with React, and make sites that perform well, especially when using it as a static site generator.
+While developing the application I did gain a better understanding about the inner workings of **Next.js**. Although it has its quirks like any other framework, Next.js is a more straightforward way to develop with React, and make sites that perform well, especially when using it as a static site generator.
 
 There are some clear limitations with using Strapi as an off the shelf API. The issue that I have run into is being able to validate required fields when making POST requests, which does not always work, even though I have clearly specified it and tested everything in the GUI before making requests. As stated before, a way to solve this would be to set up API endpoints through Next.js that validate requests, and then pass those requests on to Strapi.
 
