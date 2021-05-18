@@ -18,7 +18,7 @@ Each page was coded to closely resemble the Figma design. Code that needs to be 
 
 To style the app **SASS** has been used with SCSS modules, and component level styles to ensure good performance.
 
-A Strapi instance was set up as the backend API, with **S3** and **MongoDB**.
+A **Strapi** instance was set up as the backend API, with **S3** and **MongoDB**.
 
 All functionality has been tested to ensure that everything works as expected.
 
@@ -32,7 +32,7 @@ All required functionality has been included. However, I have made certain techn
 
 The design is built from a user experience centric perspective. Although the visual appeal could be improved, the way a user would interact with the app has been carefully thought out. So as to create a good user flow that makes sense.
 
-Because the /hotels and /hotel/[slug] pages are statically generated, they won't update until the website is re-built. This shouldn't be a problem if you run the project locally. So if you add a new hotel, check it locally instead of live with the Netlify version.
+Because the `/hotels` and `/hotel/[slug]` pages are statically generated, they won't update until the website is re-built. This shouldn't be a problem if you run the project locally. So if you add a new hotel, check it locally instead of live with the Netlify version.
 
 ### 2.2. Main section of report
 
