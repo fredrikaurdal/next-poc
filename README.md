@@ -70,7 +70,7 @@ With `/messages` and `/enquiries` there is a similar kind of logic, that each in
 
 Form validation is done through processing Strapi responses, purely to see how this would work. Using a library for this functionality would improve the user experience by making validation faster. Strapi isn’t ideal to rely on for validation anyway, because their validation is not always consistent. For that reason, I’ve had to use HTML validation in some cases, such as with image uploading when adding hotels. A way to get around that though, would be to make requests through a Next.js API, and validate each of those requests before they are sent to Strapi.
 
-The default navbar `<MainNavbar />` checks if a JWT token exists, and then toggles a ‘Login’ or ‘Dashboard’ link. With the dashboard I have chosen to do it in a slightly different way, in order to look at how I would do it using a layout component with `<DashboardLayout />`. This component enforces protected routes, by re-directing users to the login page if they are not authorized.
+The default navbar `<MainNavbar />` checks if a JWT token exists, and then toggles a **‘Login’** or **‘Dashboard’** link. With the dashboard I have chosen to do it in a slightly different way, in order to look at how I would do it using a layout component with `<DashboardLayout />`. This component enforces protected routes, by re-directing users to the login page if they are not authorized.
 
 All components are styled with SASS through SCSS modules, and reusability whenever possible with variables. Component level styles should improve performance somewhat as well, and make selector naming more concise.
 
