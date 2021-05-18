@@ -42,7 +42,7 @@ My go-to source for inspiration is Dribbble. After spending some time researchin
 
 The overall aesthetic of the application was chosen to create a Nordic feel, which is congruent with a brand that is supposed to promote hotels in the city of Bergen, with a hint of contrast.
 
-For the choice of base font I decided on Inter, because it’s a modern font that works well on screens. The only exception to this is the use of Playfair Display as the home page heading, as a way to make it stand out more.
+For the choice of base font I decided on **Inter**, because it’s a modern font that works well on screens. The only exception to this is the use of **Playfair Display** as the home page heading, as a way to make it stand out more.
 
 Except for the logo and hotels, I only have one other image, which is on the right side of the home page. I didn’t think it was necessary to add any decorations to this image, as it would take away time that needed to be spent on coding.
 
