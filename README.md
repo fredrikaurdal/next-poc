@@ -7,6 +7,7 @@ The project can be run with a Strapi API I have set up, by including a `.env.loc
 ## Login details
 
 Username: myuser
+
 Password: 68Inv8&ChqSH
 
 ## 1. Summary
